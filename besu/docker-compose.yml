@@ -1,0 +1,41 @@
+version: "3.8"
+
+# ============================================================
+#  Hyperledger Besu — Rede local de teste (Clique / PoA)
+#  Uso:  docker compose up -d
+#  RPC:  http://localhost:8545
+#  WS:   ws://localhost:8546
+#  NÃO usar em produção.
+# ============================================================
+
+services:
+  besu:
+    image: hyperledger/besu:24.10
+    container_name: carbon-besu
+    restart: unless-stopped
+    ports:
+      - "8545:8545"   # JSON-RPC HTTP
+      - "8546:8546"   # JSON-RPC WebSocket
+    volumes:
+      - ./genesis.json:/config/genesis.json:ro
+      - ./config/besu-node.toml:/config/besu-node.toml:ro
+      - ./keys/signer-key:/keys/signer-key:ro
+      - besu-data:/data
+    command: >
+      --config-file=/config/besu-node.toml
+      --node-private-key-file=/keys/signer-key
+    healthcheck:
+      test: ["CMD", "curl", "-sf", "http://localhost:8545", "-d", '{"jsonrpc":"2.0","method":"eth_blockNumber","params":[],"id":1}', "-H", "Content-Type: application/json"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+      start_period: 10s
+    networks:
+      - carbon-net
+
+volumes:
+  besu-data:
+
+networks:
+  carbon-net:
+    driver: bridge

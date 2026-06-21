@@ -1,0 +1,37 @@
+{
+  "_comment": "Genesis block para rede Hyperledger Besu local de teste (CLIQUE/PoA). NÃO usar em produção.",
+  "config": {
+    "chainId": 1337,
+    "berlinBlock": 0,
+    "londonBlock": 0,
+    "clique": {
+      "blockperiodseconds": 2,
+      "epochlength": 30000
+    }
+  },
+  "coinbase": "0x0000000000000000000000000000000000000000",
+  "difficulty": "0x1",
+  "extraData": "0x0000000000000000000000000000000000000000000000000000000000000000fe3b557e8fb62b89f4916b721be55ceb828dbd730000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+  "gasLimit": "0xffffff",
+  "mixHash": "0x0000000000000000000000000000000000000000000000000000000000000000",
+  "nonce": "0x0",
+  "timestamp": "0x5c51a607",
+  "alloc": {
+    "fe3b557e8fb62b89f4916b721be55ceb828dbd73": {
+      "comment": "Conta do validador/signer — apenas para teste local",
+      "balance": "0xad78ebc5ac6200000"
+    },
+    "627306090abaB3A6e1400e9345bC60c78a8BEf57": {
+      "comment": "Conta de teste 1",
+      "balance": "0xad78ebc5ac6200000"
+    },
+    "f17f52151EbEF6C7334FAD080c5704D77216b732": {
+      "comment": "Conta de teste 2",
+      "balance": "0xad78ebc5ac6200000"
+    },
+    "C5fdf4076b8F3A5357c5E395ab970B5B54098Fef": {
+      "comment": "Conta de teste 3",
+      "balance": "0xad78ebc5ac6200000"
+    }
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "name": "carbon-credit-traceability",
+  "version": "1.0.0",
+  "description": "Protótipo acadêmico para rastreabilidade de créditos de carbono com contratos inteligentes",
+  "private": true,
+  "scripts": {
+    "compile": "hardhat compile",
+    "test": "hardhat test",
+    "test:coverage": "hardhat coverage",
+    "node": "hardhat node",
+    "deploy:local": "hardhat run scripts/deploy.ts --network localhost",
+    "seed:local": "hardhat run scripts/seed.ts --network localhost",
+    "clean": "hardhat clean",
+    "frontend:install": "npm install --prefix frontend",
+    "frontend:dev": "npm run dev --prefix frontend",
+    "frontend:build": "npm run build --prefix frontend",
+    "frontend:typecheck": "npm run typecheck --prefix frontend",
+    "check": "npm run compile && npm run test && npm run frontend:typecheck && npm run frontend:build",
+    "setup:local": "powershell -ExecutionPolicy Bypass -File scripts/setup-local.ps1",
+    "setup:linux": "bash scripts/setup-local.sh",
+    "besu:up": "docker compose -f besu/docker-compose.yml up -d",
+    "besu:down": "docker compose -f besu/docker-compose.yml down",
+    "besu:logs": "docker compose -f besu/docker-compose.yml logs -f",
+    "deploy:besu": "hardhat run scripts/deploy.ts --network besu",
+    "seed:besu": "hardhat run scripts/seed.ts --network besu",
+    "exp:e1": "hardhat run scripts/experiments/e1-state-machine.ts --network localhost",
+    "exp:e3": "hardhat run scripts/experiments/e3-gas-measurement.ts --network localhost",
+    "exp:e4": "hardhat run scripts/experiments/e4-scalability.ts --network localhost",
+    "exp:e6": "hardhat run scripts/experiments/e6-audit-integrity.ts --network localhost",
+    "exp:e9": "hardhat run scripts/experiments/e9-security.ts --network localhost",
+    "exp:e12": "hardhat run scripts/experiments/e12-performance.ts --network localhost",
+    "exp:e15": "hardhat run scripts/experiments/e15-interface.ts --network localhost",
+    "exp:all": "hardhat run scripts/experiments/run-all.ts --network localhost"
+  },
+  "devDependencies": {
+    "@nomicfoundation/hardhat-toolbox": "^4.0.0",
+    "@types/chai": "^4.3.11",
+    "@types/mocha": "^10.0.6",
+    "@types/node": "^20.11.0",
+    "chai": "^4.4.1",
+    "hardhat": "^2.19.4",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.3.3"
+  },
+  "dependencies": {
+    "@openzeppelin/contracts": "^5.0.1",
+    "ethers": "^6.10.0"
+  }
+}

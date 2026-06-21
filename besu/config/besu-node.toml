@@ -1,0 +1,32 @@
+# Configuração do nó Hyperledger Besu — ambiente de teste local
+# NÃO usar em produção
+
+# Rede
+network-id=1337
+genesis-file="/config/genesis.json"
+
+# RPC HTTP (compatível com Ethers.js e MetaMask)
+rpc-http-enabled=true
+rpc-http-host="0.0.0.0"
+rpc-http-port=8545
+rpc-http-cors-origins=["*"]
+rpc-http-apis=["ETH","NET","WEB3","CLIQUE","DEBUG","TXPOOL"]
+
+# RPC WebSocket
+rpc-ws-enabled=true
+rpc-ws-host="0.0.0.0"
+rpc-ws-port=8546
+
+# Mining / Sealing (Clique PoA)
+miner-enabled=true
+miner-coinbase="0xfe3b557e8fb62b89f4916b721be55ceb828dbd73"
+
+# Logging
+logging="INFO"
+
+# Dados
+data-path="/data"
+
+# Peer discovery (desabilitado para rede local isolada)
+discovery-enabled=false
+p2p-enabled=false
