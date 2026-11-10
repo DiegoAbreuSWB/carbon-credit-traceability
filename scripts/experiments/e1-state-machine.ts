@@ -1,3 +1,4 @@
+import { CarbonCreditRegistry__factory } from "../../typechain-types";
 /**
  * E1 + E2 — Verificação da máquina de estados
  *
@@ -21,7 +22,7 @@ interface TestResult {
 }
 
 async function deployFresh() {
-  const Factory = await ethers.getContractFactory("CarbonCreditRegistry");
+  const Factory = new CarbonCreditRegistry__factory((await ethers.getSigners())[0]);
   const contract = await Factory.deploy();
   await contract.waitForDeployment();
   return contract;
@@ -175,6 +176,8 @@ function printResults(results: TestResult[], group: string) {
 
 main()
   .then((data) => {
-    process.exitCode = data.summary.passed === data.summary.total ? 0 : 1;
+    if (data.summary.passed !== data.summary.total) process.exitCode = 1;
+    console.log("  [JSON para relatório]");
+    console.log(JSON.stringify({ ...data, ...data.summary }, null, 2));
   })
   .catch((err) => { console.error(err); process.exit(1); });

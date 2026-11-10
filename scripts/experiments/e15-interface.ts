@@ -1,3 +1,4 @@
+import { CarbonCreditRegistry__factory } from "../../typechain-types";
 /**
  * E15 + E16 — Consistência da Interface com o Estado On-Chain
  *
@@ -11,6 +12,7 @@
  */
 
 import { ethers } from "hardhat";
+import { eventIdentity, compareEventPosition } from "./event-identity";
 import * as fs from "fs";
 import * as path from "path";
 
@@ -35,6 +37,8 @@ interface OnChainEvent {
   eventType: string;
   blockNumber: number;
   txHash: string;
+  logIndex: number;
+  transactionIndex: number;
   args: Record<string, string>;
 }
 
@@ -86,6 +90,8 @@ async function readAllEvents(contract: any, fromBlock = 0): Promise<OnChainEvent
       eventType: parsed?.name ?? "Unknown",
       blockNumber: log.blockNumber,
       txHash: log.transactionHash,
+      logIndex: log.index,
+      transactionIndex: log.transactionIndex,
       args,
     };
   });
@@ -93,7 +99,7 @@ async function readAllEvents(contract: any, fromBlock = 0): Promise<OnChainEvent
 
 async function main() {
   const [owner, validator, buyer, other] = await ethers.getSigners();
-  const Factory = await ethers.getContractFactory("CarbonCreditRegistry");
+  const Factory = new CarbonCreditRegistry__factory((await ethers.getSigners())[0]);
   const results: TestResult[] = [];
 
   console.log("\n══════════════════════════════════════════════════");
@@ -230,18 +236,18 @@ async function main() {
   });
 
   // E16-L3: todos os eventos têm txHash único
-  const txHashes = onChainEvents.map((e) => e.txHash);
+  const txHashes = onChainEvents.map(eventIdentity);
   const uniqueHashes = new Set(txHashes).size;
   evResults.push({
     id: "E16-L3",
-    description: "Todos os eventos têm txHash único",
+    description: "Todos os eventos têm identidade txHash + logIndex única",
     pass: uniqueHashes === txHashes.length,
     detail: `${uniqueHashes} únicos de ${txHashes.length} total`,
   });
 
   // E16-L4: ordenação cronológica (blockNumber crescente)
-  const ordered = onChainEvents.every((e, i) => i === 0 || e.blockNumber >= onChainEvents[i - 1].blockNumber);
-  evResults.push({ id: "E16-L4", description: "Eventos em ordem cronológica por bloco", pass: ordered, detail: ordered ? "OK" : "Ordem incorreta" });
+  const ordered = onChainEvents.every((e, i) => i === 0 || compareEventPosition(onChainEvents[i - 1], e) < 0);
+  evResults.push({ id: "E16-L4", description: "Eventos ordenados por bloco, transação e log", pass: ordered, detail: ordered ? "OK" : "Ordem incorreta" });
 
   results.push(...evResults);
 
@@ -281,6 +287,7 @@ async function main() {
 main()
   .then((data) => {
     console.log("\n  [JSON para relatório]");
-    console.log(JSON.stringify({ experiment: data.experiment, ...data.summary }, null, 2));
+    console.log(JSON.stringify({ ...data, ...data.summary }, null, 2));
+    if (data.summary.passed !== data.summary.total) process.exitCode = 1;
   })
   .catch((err) => { console.error(err); process.exit(1); });

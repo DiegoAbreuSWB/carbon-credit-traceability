@@ -104,12 +104,14 @@ type RawEvent = {
 };
 
 function mapCredit(r: RawCredit): CarbonCredit {
+  const quantity = Number(r.co2Tonnes);
+  if (!Number.isSafeInteger(quantity)) throw new RangeError('Quantidade de CO2 fora da faixa de inteiros seguros da interface.');
   return {
     id: r.id.toString(),
     areaName: r.areaName,
     location: r.location,
     geoCoordinates: r.geoCoordinates,
-    co2Tonnes: Number(r.co2Tonnes),
+    co2Tonnes: quantity,
     issuer: r.issuer,
     owner: r.owner,
     validator: r.validator,
@@ -160,7 +162,10 @@ export async function getCreditById(id: string): Promise<CarbonCredit | null> {
     const contract = getReadContract();
     const raw = await contract.getCredit(BigInt(id));
     return mapCredit(raw as RawCredit);
-  } catch { return null; }
+  } catch (error) {
+    if (ethers.isError(error, 'CALL_EXCEPTION') && error.reason === 'CCR: credito inexistente') return null;
+    throw error;
+  }
 }
 
 export async function getAuditLog(): Promise<CreditEvent[]> {
@@ -178,6 +183,9 @@ export async function getEventsByCredit(id: string): Promise<CreditEvent[]> {
 }
 
 export async function issueCredit(data: IssueFormData): Promise<string> {
+  if (!Number.isSafeInteger(data.co2Tonnes) || data.co2Tonnes <= 0) {
+    throw new RangeError('Informe uma quantidade inteira positiva de CO2 dentro da faixa segura.');
+  }
   if (MODE === 'mock') {
     const newId = String(_mockNextId++);
     const now = Math.floor(Date.now() / 1000);

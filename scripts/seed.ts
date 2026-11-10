@@ -1,3 +1,4 @@
+import { CarbonCreditRegistry__factory } from "../typechain-types";
 /**
  * seed.ts — Popula o contrato com dados simulados de créditos de carbono.
  * Uso: CONTRACT_ADDRESS=0x... npx hardhat run scripts/seed.ts --network localhost
@@ -22,7 +23,7 @@ async function main() {
   if (!contractAddress) throw new Error("Defina CONTRACT_ADDRESS no ambiente.");
 
   console.log(`\n🌱 Populando contrato em ${contractAddress}...`);
-  const registry = await ethers.getContractAt("CarbonCreditRegistry", contractAddress);
+  const registry = CarbonCreditRegistry__factory.connect(contractAddress, deployer);
 
   for (let i = 0; i < MOCK_CREDITS.length; i++) {
     const c = MOCK_CREDITS[i];

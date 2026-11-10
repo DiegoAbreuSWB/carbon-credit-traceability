@@ -1,3 +1,4 @@
+import { CarbonCreditRegistry__factory } from "../typechain-types";
 import { expect } from "chai";
 import { ethers } from "hardhat";
 import { CarbonCreditRegistry } from "../typechain-types";
@@ -18,7 +19,7 @@ describe("CarbonCreditRegistry", function () {
 
   beforeEach(async function () {
     [owner, validator, buyer, other] = await ethers.getSigners();
-    const Factory = await ethers.getContractFactory("CarbonCreditRegistry");
+    const Factory = new CarbonCreditRegistry__factory((await ethers.getSigners())[0]);
     registry = (await Factory.deploy()) as CarbonCreditRegistry;
   });
 
@@ -42,9 +43,13 @@ describe("CarbonCreditRegistry", function () {
     });
 
     it("deve emitir o evento CreditIssued", async function () {
-      await expect(registry.connect(owner).issueCredit(AREA_NAME, LOCATION, GEO, CO2))
+      const tx = await registry.connect(owner).issueCredit(AREA_NAME, LOCATION, GEO, CO2);
+      const receipt = await tx.wait();
+      const block = await ethers.provider.getBlock(receipt!.blockNumber);
+      expect(block).not.to.equal(null);
+      await expect(tx)
         .to.emit(registry, "CreditIssued")
-        .withArgs(0n, owner.address, AREA_NAME, CO2, await getTimestamp());
+        .withArgs(0n, owner.address, AREA_NAME, CO2, block!.timestamp);
     });
 
     it("deve incrementar o total de créditos", async function () {
@@ -82,9 +87,13 @@ describe("CarbonCreditRegistry", function () {
     });
 
     it("deve emitir o evento CreditValidated", async function () {
-      await expect(registry.connect(validator).validateCredit(0))
+      const tx = await registry.connect(validator).validateCredit(0);
+      const receipt = await tx.wait();
+      const block = await ethers.provider.getBlock(receipt!.blockNumber);
+      expect(block).not.to.equal(null);
+      await expect(tx)
         .to.emit(registry, "CreditValidated")
-        .withArgs(0n, validator.address, await getTimestamp());
+        .withArgs(0n, validator.address, block!.timestamp);
     });
 
     it("deve rejeitar validação de crédito já validado", async function () {
@@ -123,9 +132,13 @@ describe("CarbonCreditRegistry", function () {
 
     it("deve emitir o evento CreditRejected", async function () {
       const reason = "Documentação insuficiente";
-      await expect(registry.connect(validator).rejectCredit(0, reason))
+      const tx = await registry.connect(validator).rejectCredit(0, reason);
+      const receipt = await tx.wait();
+      const block = await ethers.provider.getBlock(receipt!.blockNumber);
+      expect(block).not.to.equal(null);
+      await expect(tx)
         .to.emit(registry, "CreditRejected")
-        .withArgs(0n, validator.address, reason, await getTimestamp());
+        .withArgs(0n, validator.address, reason, block!.timestamp);
     });
 
     it("deve rejeitar operação de rejeição em crédito já validado", async function () {
@@ -153,9 +166,13 @@ describe("CarbonCreditRegistry", function () {
     });
 
     it("deve emitir o evento CreditTransferred", async function () {
-      await expect(registry.connect(owner).transferCredit(0, buyer.address))
+      const tx = await registry.connect(owner).transferCredit(0, buyer.address);
+      const receipt = await tx.wait();
+      const block = await ethers.provider.getBlock(receipt!.blockNumber);
+      expect(block).not.to.equal(null);
+      await expect(tx)
         .to.emit(registry, "CreditTransferred")
-        .withArgs(0n, owner.address, buyer.address, await getTimestamp());
+        .withArgs(0n, owner.address, buyer.address, block!.timestamp);
     });
 
     it("deve rejeitar transferência por usuário não autorizado", async function () {
@@ -209,9 +226,13 @@ describe("CarbonCreditRegistry", function () {
     });
 
     it("deve emitir o evento CreditRetired", async function () {
-      await expect(registry.connect(owner).retireCredit(0))
+      const tx = await registry.connect(owner).retireCredit(0);
+      const receipt = await tx.wait();
+      const block = await ethers.provider.getBlock(receipt!.blockNumber);
+      expect(block).not.to.equal(null);
+      await expect(tx)
         .to.emit(registry, "CreditRetired")
-        .withArgs(0n, owner.address, await getTimestamp());
+        .withArgs(0n, owner.address, block!.timestamp);
     });
 
     it("deve rejeitar aposentadoria por usuário não autorizado", async function () {
@@ -276,11 +297,3 @@ describe("CarbonCreditRegistry", function () {
     });
   });
 });
-
-// ---------------------------------------------------------------------------
-// Helper: timestamp aproximado do próximo bloco
-// ---------------------------------------------------------------------------
-async function getTimestamp(): Promise<number> {
-  const block = await ethers.provider.getBlock("latest");
-  return (block?.timestamp ?? 0) + 1;
-}

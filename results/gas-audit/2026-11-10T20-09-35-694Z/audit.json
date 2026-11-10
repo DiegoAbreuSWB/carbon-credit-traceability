@@ -1,0 +1,68 @@
+{
+  "timestamp": "2026-11-10T20:09:35.694Z",
+  "kind": "gas-limit-audit",
+  "originalHistoryRun": "2026-11-10T14-59-15-343Z",
+  "explanation": "Supplementary replication of the same prepared state; original timings are preserved.",
+  "hardhat": "2.28.6",
+  "ethers": "6.17.0",
+  "network": "hardhat",
+  "hardhatConfig": {
+    "hardfork": "osaka",
+    "blockGasLimit": 60000000,
+    "gasPrice": "auto",
+    "chainId": 31337,
+    "throwOnTransactionFailures": true,
+    "throwOnCallFailures": true,
+    "allowUnlimitedContractSize": false,
+    "mining": {
+      "auto": true,
+      "interval": 0,
+      "mempool": {
+        "order": "priority"
+      }
+    },
+    "loggingEnabled": false,
+    "gasMultiplier": 1,
+    "minGasPrice": "0",
+    "chains": {},
+    "gas": 16777216,
+    "initialDate": "2026-11-10T20:09:26.260Z"
+  },
+  "latestBlock": {
+    "number": 2011,
+    "gasLimit": "60000000"
+  },
+  "records": 2000,
+  "events": 2010,
+  "probes": [
+    {
+      "requestedGas": null,
+      "success": false,
+      "error": "Transaction ran out of gas"
+    },
+    {
+      "requestedGas": 16777216,
+      "success": false,
+      "error": "Transaction ran out of gas"
+    },
+    {
+      "requestedGas": 30000000,
+      "success": false,
+      "error": "transaction gas limit (30000000) is greater than the cap (16777216)"
+    },
+    {
+      "requestedGas": 60000000,
+      "success": false,
+      "error": "transaction gas limit (60000000) is greater than the cap (16777216)"
+    }
+  ],
+  "contractSha256": "69a9b4b00e2c97022e81cb926d2c5403ccc2c1da6fe354ce58d4edc94929b269",
+  "scriptSha256": "2e9a42c0f82a1076039ff5bef1de7f52c10f33492c01c4603ff49af6710209e1",
+  "defaultCallTrace": {
+    "gasUsed": 16777216,
+    "failed": true
+  },
+  "redactions": [
+    "hardhatConfig.accounts: account configuration omitted from public metadata"
+  ]
+}

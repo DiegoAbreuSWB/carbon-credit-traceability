@@ -25,3 +25,7 @@ Para o ambiente Besu opcional, configure localmente o arquivo besu/keys/signer-k
 ## Licença
 
 Uso acadêmico. Consulte sua instituição de ensino para definição de licença apropriada antes de publicação ou distribuição.
+
+## Experimentos
+
+Consulte [Reprodução dos experimentos](REPRODUCIBILITY.md) e os [resultados das medições](results/).

@@ -1,3 +1,4 @@
+import { CarbonCreditRegistry__factory } from "../../typechain-types";
 /**
  * E9 + E10 + E11 — Segurança do Contrato
  *
@@ -28,7 +29,7 @@ async function expectRevert(fn: () => Promise<any>, expectedMsg?: string): Promi
 
 async function main() {
   const [owner, validator, attacker, buyer, other] = await ethers.getSigners();
-  const Factory = await ethers.getContractFactory("CarbonCreditRegistry");
+  const Factory = new CarbonCreditRegistry__factory((await ethers.getSigners())[0]);
 
   // ── E9: Controle de Acesso ──────────────────────────────────
   console.log("\n══════════════════════════════════════════════════");
@@ -241,7 +242,8 @@ function printResults(results: TestResult[], group: string) {
 
 main()
   .then((data) => {
+    if (data.summary.passed !== data.summary.total) process.exitCode = 1;
     console.log("  [JSON para relatório]");
-    console.log(JSON.stringify({ experiment: "E9+E10+E11", ...data.summary }, null, 2));
+    console.log(JSON.stringify({ ...data, ...data.summary }, null, 2));
   })
   .catch((err) => { console.error(err); process.exit(1); });

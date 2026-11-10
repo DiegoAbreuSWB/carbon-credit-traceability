@@ -1,3 +1,4 @@
+import { CarbonCreditRegistry__factory } from "../../typechain-types";
 /**
  * E12 + E13 + E14 — Desempenho de Rede
  *
@@ -25,7 +26,7 @@ async function measureLatency(label: string, fn: () => Promise<any>): Promise<nu
 
 async function main() {
   const [owner, validator, buyer] = await ethers.getSigners();
-  const Factory = await ethers.getContractFactory("CarbonCreditRegistry");
+  const Factory = new CarbonCreditRegistry__factory((await ethers.getSigners())[0]);
 
   // Detecta rede
   const network = await ethers.provider.getNetwork();
@@ -136,41 +137,16 @@ async function main() {
   console.log(`    Tempo total: ${throughputMs}ms`);
   console.log(`    Throughput: ${tps} tx/s`);
 
-  // ── E14: Análise comparativa Hardhat vs Besu ────────────────
-  console.log("\n══════════════════════════════════════════════════════════");
-  console.log("  E14 — Comparação de Latência entre Redes");
-  console.log("══════════════════════════════════════════════════════════\n");
-
-  // Valores de referência para comparação (coletados separadamente)
-  const REFERENCE = {
-    hardhat: { avgMs: 5, note: "instamining, sem período de bloco" },
-    besu: { avgMs: 2100, note: "Clique PoA, blockperiodseconds=2" },
-    ethereum_mainnet: { avgMs: 12000, note: "PoS Ethereum, ~12s por bloco" },
-  };
-
-  console.log("  Rede atual medida:");
-  const currentAvg = Math.round(latencyResults.reduce((a, r) => a + r.avgMs, 0) / latencyResults.length);
-  console.log(`    ${networkName}: ${currentAvg}ms (média de todas as operações)`);
-
-  console.log("\n  Referências para artigo:");
-  for (const [net, ref] of Object.entries(REFERENCE)) {
-    console.log(`    ${net.padEnd(20)} ~${ref.avgMs}ms  — ${ref.note}`);
-  }
-
-  const isBesú = network.chainId === 1337n;
-  const isHardhat = network.chainId === 31337n;
-  if (isHardhat) {
-    console.log(`\n  ✅ Esta medição (${currentAvg}ms) é esperada para Hardhat (automining sem delay de bloco).`);
-  } else if (isBesú) {
-    const ratio = (currentAvg / REFERENCE.hardhat.avgMs).toFixed(0);
-    console.log(`\n  Besu: ${ratio}x mais lento que Hardhat — justificado pelo período de bloco de 2s do Clique PoA.`);
-  }
+  // E14 is documentary context, not an experiment or network latency comparison.
+  console.log("E14: contexto documental; nenhuma outra rede foi medida nesta execucao.");
 
   return {
-    experiment: "E12+E13+E14",
+    experiment: "E12+E13",
+    e14: { kind: "documentary-context", measured: false },
     network: { name: networkName, chainId: network.chainId.toString() },
     latency: latencyResults.map((r) => ({
       operation: r.operation,
+      samples: r.samples,
       minMs: r.minMs,
       avgMs: r.avgMs,
       maxMs: r.maxMs,

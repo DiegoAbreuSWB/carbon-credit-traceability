@@ -1,0 +1,162 @@
+
+══════════════════════════════════════════════════════════
+  E3 — Medição de Custo de Gás por Operação
+  Amostras por operação: 10 | ETH/USD referência: $3.000
+  Gas price: 1 gwei
+══════════════════════════════════════════════════════════
+
+  Operação              Mín (gas)    Média (gas)  Máx (gas)  Desvio     Custo ETH    Custo USD
+  ──────────────────────────────────────────────────────────────────────────────────────────────────────────────
+  deploy()                   1723591      1723591    1723591          0   0.00172359 $    5.1708
+  issueCredit()               331146       331156     331158          4   0.00033116 $    0.9935
+  validateCredit()            146932       164852     166844       5974   0.00016485 $    0.4946
+  rejectCredit()              214017       231937     233929       5974   0.00023194 $    0.6958
+  transferCredit()            203931       221851     223843       5974   0.00022185 $    0.6656
+  retireCredit()              110020       127940     129932       5974   0.00012794 $    0.3838
+
+══════════════════════════════════════════════════════════
+  E5 — Eficiência Relativa ao Gas de Referência
+══════════════════════════════════════════════════════════
+
+  Referência: transferência ETH simples = 21000 gas
+
+  Operação              Gas Médio   Ratio vs Referência  Classificação
+  ────────────────────────────────────────────────────────────────────────────────
+  deploy()                 1723591      82.1x               Alto custo
+  issueCredit()             331156      15.8x               Moderado
+  validateCredit()          164852       7.9x               Eficiente
+  rejectCredit()            231937      11.0x               Moderado
+  transferCredit()          221851      10.6x               Moderado
+  retireCredit()            127940       6.1x               Eficiente
+
+  Ciclo completo (emissão→validação→transferência→aposentadoria):
+    Gas total: 845.799 | ETH: 0.00084580 | USD: $2.5374
+
+
+  [JSON para relatório]
+{
+  "experiment": "E3+E5",
+  "gasPrice_gwei": 1,
+  "ethPriceUSD": 3000,
+  "samples": 10,
+  "results": [
+    {
+      "operation": "deploy()",
+      "samples": [
+        "1723591",
+        "1723591",
+        "1723591"
+      ],
+      "min": "1723591",
+      "avg": "1723591",
+      "max": "1723591",
+      "stdDev": "0",
+      "costUSD": "5.1708"
+    },
+    {
+      "operation": "issueCredit()",
+      "samples": [
+        "331146",
+        "331158",
+        "331158",
+        "331158",
+        "331158",
+        "331158",
+        "331158",
+        "331158",
+        "331158",
+        "331158"
+      ],
+      "min": "331146",
+      "avg": "331156",
+      "max": "331158",
+      "stdDev": "4",
+      "costUSD": "0.9935"
+    },
+    {
+      "operation": "validateCredit()",
+      "samples": [
+        "146932",
+        "166844",
+        "166844",
+        "166844",
+        "166844",
+        "166844",
+        "166844",
+        "166844",
+        "166844",
+        "166844"
+      ],
+      "min": "146932",
+      "avg": "164852",
+      "max": "166844",
+      "stdDev": "5974",
+      "costUSD": "0.4946"
+    },
+    {
+      "operation": "rejectCredit()",
+      "samples": [
+        "214017",
+        "233929",
+        "233929",
+        "233929",
+        "233929",
+        "233929",
+        "233929",
+        "233929",
+        "233929",
+        "233929"
+      ],
+      "min": "214017",
+      "avg": "231937",
+      "max": "233929",
+      "stdDev": "5974",
+      "costUSD": "0.6958"
+    },
+    {
+      "operation": "transferCredit()",
+      "samples": [
+        "203931",
+        "223843",
+        "223843",
+        "223843",
+        "223843",
+        "223843",
+        "223843",
+        "223843",
+        "223843",
+        "223843"
+      ],
+      "min": "203931",
+      "avg": "221851",
+      "max": "223843",
+      "stdDev": "5974",
+      "costUSD": "0.6656"
+    },
+    {
+      "operation": "retireCredit()",
+      "samples": [
+        "110020",
+        "129932",
+        "129932",
+        "129932",
+        "129932",
+        "129932",
+        "129932",
+        "129932",
+        "129932",
+        "129932"
+      ],
+      "min": "110020",
+      "avg": "127940",
+      "max": "129932",
+      "stdDev": "5974",
+      "costUSD": "0.3838"
+    }
+  ],
+  "cycleTotal": {
+    "gas": "845799",
+    "usd": "2.5374"
+  },
+  "referenceGas": "21000"
+}

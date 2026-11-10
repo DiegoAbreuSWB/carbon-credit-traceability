@@ -1,0 +1,158 @@
+{
+  "profile": "pilot",
+  "status": "completed",
+  "volumes": [
+    10,
+    30
+  ],
+  "rounds": 1,
+  "samples": 1,
+  "rows": [
+    {
+      "round": 1,
+      "volume": 10,
+      "events": 20,
+      "sample": 1,
+      "operation": "getLogs",
+      "durationMs": 1.2902,
+      "count": 20,
+      "success": true
+    },
+    {
+      "round": 1,
+      "volume": 10,
+      "events": 20,
+      "sample": 1,
+      "operation": "replay",
+      "durationMs": 4.5731,
+      "count": 10,
+      "success": true
+    },
+    {
+      "round": 1,
+      "volume": 10,
+      "events": 20,
+      "sample": 1,
+      "operation": "getAuditLog",
+      "durationMs": 5.1327,
+      "count": 20,
+      "success": true
+    },
+    {
+      "round": 1,
+      "volume": 10,
+      "events": 20,
+      "sample": 1,
+      "operation": "getCreditEvents",
+      "durationMs": 1.8327,
+      "count": 5,
+      "success": true
+    },
+    {
+      "round": 1,
+      "volume": 30,
+      "events": 40,
+      "sample": 1,
+      "operation": "getLogs",
+      "durationMs": 2.1508,
+      "count": 40,
+      "success": true
+    },
+    {
+      "round": 1,
+      "volume": 30,
+      "events": 40,
+      "sample": 1,
+      "operation": "replay",
+      "durationMs": 10.2653,
+      "count": 30,
+      "success": true
+    },
+    {
+      "round": 1,
+      "volume": 30,
+      "events": 40,
+      "sample": 1,
+      "operation": "getAuditLog",
+      "durationMs": 13.0314,
+      "count": 40,
+      "success": true
+    },
+    {
+      "round": 1,
+      "volume": 30,
+      "events": 40,
+      "sample": 1,
+      "operation": "getCreditEvents",
+      "durationMs": 2.8831,
+      "count": 5,
+      "success": true
+    }
+  ],
+  "checks": [
+    {
+      "round": 1,
+      "volume": 10,
+      "events": 20,
+      "creditsCompared": 10,
+      "fieldsPerCredit": 8,
+      "passed": true
+    },
+    {
+      "round": 1,
+      "negativeControls": [
+        "duplicate-log",
+        "missing-issuance",
+        "altered-owner"
+      ],
+      "passed": true
+    },
+    {
+      "round": 1,
+      "volume": 30,
+      "events": 40,
+      "creditsCompared": 30,
+      "fieldsPerCredit": 8,
+      "passed": true
+    }
+  ],
+  "node": "v22.17.0",
+  "hardhat": "2.28.6",
+  "solidity": {
+    "compilers": [
+      {
+        "version": "0.8.20",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      }
+    ],
+    "overrides": {}
+  },
+  "contractSha256": "69a9b4b00e2c97022e81cb926d2c5403ccc2c1da6fe354ce58d4edc94929b269",
+  "scriptSha256": "91630dc137dc883a848b66e4bd98bf7b8dcf6188cd85ce4ca2d310ec25f32e62",
+  "excludedFields": [
+    "location",
+    "geoCoordinates"
+  ],
+  "scope": "Isolated in-process Hardhat, automining; timings include ethers decoding.",
+  "chainId": "31337"
+}

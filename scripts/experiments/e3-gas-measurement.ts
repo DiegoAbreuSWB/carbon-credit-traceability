@@ -1,3 +1,4 @@
+import { CarbonCreditRegistry__factory } from "../../typechain-types";
 /**
  * E3 + E5 — Custo de Gás por Operação e Eficiência Relativa
  *
@@ -11,7 +12,7 @@ import { ethers } from "hardhat";
 
 const N = 10; // amostras por operação
 const ETH_PRICE_USD = 3_000; // ETH/USD (referência 2024)
-const GAS_PRICE_GWEI = 1; // Hardhat local usa 1 gwei por padrão
+const GAS_PRICE_GWEI = 1; // cenario economico ilustrativo; nao e preco medido
 
 interface GasResult {
   operation: string;
@@ -51,7 +52,7 @@ function gasToUSD(gasUsed: bigint): { eth: string; usd: string } {
 
 async function main() {
   const [owner, validator, buyer] = await ethers.getSigners();
-  const Factory = await ethers.getContractFactory("CarbonCreditRegistry");
+  const Factory = new CarbonCreditRegistry__factory((await ethers.getSigners())[0]);
 
   console.log("\n══════════════════════════════════════════════════════════");
   console.log("  E3 — Medição de Custo de Gás por Operação");
@@ -191,6 +192,7 @@ async function main() {
     samples: N,
     results: results.map((r) => ({
       operation: r.operation,
+      samples: r.samples.map(String),
       min: r.min.toString(),
       avg: r.avg.toString(),
       max: r.max.toString(),

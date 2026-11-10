@@ -1,0 +1,588 @@
+{
+  "network": "hardhat",
+  "contractSha256": "69a9b4b00e2c97022e81cb926d2c5403ccc2c1da6fe354ce58d4edc94929b269",
+  "runs": [
+    {
+      "script": "e1-state-machine",
+      "network": "hardhat",
+      "durationMs": 2585,
+      "exitCode": 0,
+      "failed": true,
+      "error": "Error: Missing structured results",
+      "sourceSha256": "32b9953fbf471ebaf5d03079d03a78c9c27559c31dba2fc1fa909695fd572072"
+    },
+    {
+      "script": "e3-gas-measurement",
+      "network": "hardhat",
+      "durationMs": 2799,
+      "exitCode": 0,
+      "failed": false,
+      "sourceSha256": "fba462043aabca32945c2129938bacb5fe358b6aacdcf6fa360839b9637a9c2d",
+      "data": {
+        "experiment": "E3+E5",
+        "gasPrice_gwei": 1,
+        "ethPriceUSD": 3000,
+        "samples": 10,
+        "results": [
+          {
+            "operation": "deploy()",
+            "samples": [
+              "1723591",
+              "1723591",
+              "1723591"
+            ],
+            "min": "1723591",
+            "avg": "1723591",
+            "max": "1723591",
+            "stdDev": "0",
+            "costUSD": "5.1708"
+          },
+          {
+            "operation": "issueCredit()",
+            "samples": [
+              "331146",
+              "331158",
+              "331158",
+              "331158",
+              "331158",
+              "331158",
+              "331158",
+              "331158",
+              "331158",
+              "331158"
+            ],
+            "min": "331146",
+            "avg": "331156",
+            "max": "331158",
+            "stdDev": "4",
+            "costUSD": "0.9935"
+          },
+          {
+            "operation": "validateCredit()",
+            "samples": [
+              "146932",
+              "166844",
+              "166844",
+              "166844",
+              "166844",
+              "166844",
+              "166844",
+              "166844",
+              "166844",
+              "166844"
+            ],
+            "min": "146932",
+            "avg": "164852",
+            "max": "166844",
+            "stdDev": "5974",
+            "costUSD": "0.4946"
+          },
+          {
+            "operation": "rejectCredit()",
+            "samples": [
+              "214017",
+              "233929",
+              "233929",
+              "233929",
+              "233929",
+              "233929",
+              "233929",
+              "233929",
+              "233929",
+              "233929"
+            ],
+            "min": "214017",
+            "avg": "231937",
+            "max": "233929",
+            "stdDev": "5974",
+            "costUSD": "0.6958"
+          },
+          {
+            "operation": "transferCredit()",
+            "samples": [
+              "203931",
+              "223843",
+              "223843",
+              "223843",
+              "223843",
+              "223843",
+              "223843",
+              "223843",
+              "223843",
+              "223843"
+            ],
+            "min": "203931",
+            "avg": "221851",
+            "max": "223843",
+            "stdDev": "5974",
+            "costUSD": "0.6656"
+          },
+          {
+            "operation": "retireCredit()",
+            "samples": [
+              "110020",
+              "129932",
+              "129932",
+              "129932",
+              "129932",
+              "129932",
+              "129932",
+              "129932",
+              "129932",
+              "129932"
+            ],
+            "min": "110020",
+            "avg": "127940",
+            "max": "129932",
+            "stdDev": "5974",
+            "costUSD": "0.3838"
+          }
+        ],
+        "cycleTotal": {
+          "gas": "845799",
+          "usd": "2.5374"
+        },
+        "referenceGas": "21000"
+      }
+    },
+    {
+      "script": "e4-scalability",
+      "network": "hardhat",
+      "durationMs": 3428,
+      "exitCode": 0,
+      "failed": false,
+      "sourceSha256": "17ed8cbf44dfe769d2526f89108a9a1b64ca19b966c325bd231b8b0d482e0d8a",
+      "data": {
+        "experiment": "E4",
+        "volumes": [
+          1,
+          10,
+          50,
+          100,
+          200
+        ],
+        "results": [
+          {
+            "volume": 1,
+            "issueGas": "331086",
+            "validateGas": "146932",
+            "transferGas": "203931",
+            "retireGas": "110169"
+          },
+          {
+            "volume": 10,
+            "issueGas": "339486",
+            "validateGas": "166844",
+            "transferGas": "223843",
+            "retireGas": "130081"
+          },
+          {
+            "volume": 50,
+            "issueGas": "339498",
+            "validateGas": "166844",
+            "transferGas": "223843",
+            "retireGas": "130081"
+          },
+          {
+            "volume": 100,
+            "issueGas": "339498",
+            "validateGas": "166844",
+            "transferGas": "223843",
+            "retireGas": "130081"
+          },
+          {
+            "volume": 200,
+            "issueGas": "339510",
+            "validateGas": "166844",
+            "transferGas": "223843",
+            "retireGas": "130081"
+          }
+        ]
+      }
+    },
+    {
+      "script": "e6-audit-integrity",
+      "network": "hardhat",
+      "durationMs": 2795,
+      "exitCode": 0,
+      "failed": false,
+      "sourceSha256": "aa8f1b16f492e980bbd7ff629779cb876659c68f126d4cd944bf2309335d1293",
+      "data": {
+        "E6": [
+          {
+            "id": "E6-C1",
+            "description": "Sequência de eventos corresponde às operações realizadas",
+            "pass": true,
+            "detail": "OK — 8 eventos na ordem correta"
+          },
+          {
+            "id": "E6-C2",
+            "description": "Todos os eventos têm blockNumber e txHash válidos",
+            "pass": true,
+            "detail": "OK"
+          },
+          {
+            "id": "E6-C3",
+            "description": "Todos os eventos de crédito contêm o campo creditId",
+            "pass": true,
+            "detail": "OK"
+          },
+          {
+            "id": "E6-C4",
+            "description": "CreditRejected inclui campo reason não-vazio",
+            "pass": true,
+            "detail": "OK — 1 rejeição(ões) com razão registrada"
+          }
+        ],
+        "E7": [
+          {
+            "id": "E7-R0",
+            "description": "Crédito #0: estado e proprietário reconstituídos por replay",
+            "pass": true,
+            "detail": "replay=\"Retired\" on-chain=\"Retired\" ownerMatch=true"
+          },
+          {
+            "id": "E7-R1",
+            "description": "Crédito #1: estado e proprietário reconstituídos por replay",
+            "pass": true,
+            "detail": "replay=\"Rejected\" on-chain=\"Rejected\" ownerMatch=true"
+          },
+          {
+            "id": "E7-R2",
+            "description": "Crédito #2: estado e proprietário reconstituídos por replay",
+            "pass": true,
+            "detail": "replay=\"Validated\" on-chain=\"Validated\" ownerMatch=true"
+          },
+          {
+            "id": "E7-TOTAL",
+            "description": "Todos os estados reconstituídos por replay batem com on-chain",
+            "pass": true,
+            "detail": "OK"
+          }
+        ],
+        "E8": [
+          {
+            "id": "E8-I1",
+            "description": "Eventos históricos permanecem inalterados após nova operação",
+            "pass": true,
+            "detail": "OK — histórico imutável confirmado"
+          },
+          {
+            "id": "E8-I2",
+            "description": "Nova operação ACRESCENTA evento sem remover existentes",
+            "pass": true,
+            "detail": "antes=8, depois=9 — OK"
+          },
+          {
+            "id": "E8-I3",
+            "description": "Blocos dos eventos são monotonicamente crescentes",
+            "pass": true,
+            "detail": "OK"
+          }
+        ],
+        "summary": {
+          "passed": 11,
+          "total": 11
+        },
+        "passed": 11,
+        "total": 11
+      }
+    },
+    {
+      "script": "e9-security",
+      "network": "hardhat",
+      "durationMs": 2703,
+      "exitCode": 0,
+      "failed": false,
+      "sourceSha256": "772c30328bc8f3ee42e0732ca511cc47673459450398c4b3f44dc70b300f7fdf",
+      "data": {
+        "E9": [
+          {
+            "id": "E9-A1",
+            "description": "Atacante não pode transferir crédito do owner",
+            "pass": true,
+            "detail": "VM Exception while processing transaction: reverted with reason string 'CCR: nao"
+          },
+          {
+            "id": "E9-A2",
+            "description": "Atacante não pode aposentar crédito do owner",
+            "pass": true,
+            "detail": "VM Exception while processing transaction: reverted with reason string 'CCR: nao"
+          },
+          {
+            "id": "E9-A3",
+            "description": "Atacante não pode validar crédito (qualquer conta pode validar — sem Role)",
+            "pass": true,
+            "detail": "NÃO reverteu"
+          },
+          {
+            "id": "E9-A4",
+            "description": "Buyer pode transferir seu próprio crédito (id=2)",
+            "pass": true,
+            "detail": "NÃO reverteu"
+          },
+          {
+            "id": "E9-A5",
+            "description": "Atacante não pode transferir crédito do buyer após transferência acima",
+            "pass": true,
+            "detail": "VM Exception while processing transaction: reverted with reason string 'CCR: nao"
+          },
+          {
+            "id": "E9-A6",
+            "description": "Owner não pode aposentar crédito transferido para buyer/other",
+            "pass": true,
+            "detail": "VM Exception while processing transaction: reverted with reason string 'CCR: nao"
+          },
+          {
+            "id": "E9-A7",
+            "description": "Transferência para endereço zero reverted",
+            "pass": true,
+            "detail": "VM Exception while processing transaction: reverted with reason string 'CCR: des"
+          }
+        ],
+        "E10": [
+          {
+            "id": "E10-D1",
+            "description": "Retirar crédito já aposentado (double-retirement)",
+            "pass": true,
+            "detail": "VM Exception while processing transaction: reverted with reason string 'CCR: ape"
+          },
+          {
+            "id": "E10-D2",
+            "description": "Transferir crédito aposentado",
+            "pass": true,
+            "detail": "VM Exception while processing transaction: reverted with reason string 'CCR: cre"
+          },
+          {
+            "id": "E10-D3",
+            "description": "Validar crédito aposentado",
+            "pass": true,
+            "detail": "VM Exception while processing transaction: reverted with reason string 'CCR: ape"
+          },
+          {
+            "id": "E10-D4",
+            "description": "Rejeitar crédito aposentado",
+            "pass": true,
+            "detail": "VM Exception while processing transaction: reverted with reason string 'CCR: ape"
+          },
+          {
+            "id": "E10-D5",
+            "description": "Validar crédito já validado (double-validation)",
+            "pass": true,
+            "detail": "VM Exception while processing transaction: reverted with reason string 'CCR: ape"
+          },
+          {
+            "id": "E10-D6",
+            "description": "Rejeitar crédito já validado",
+            "pass": true,
+            "detail": "VM Exception while processing transaction: reverted with reason string 'CCR: ape"
+          }
+        ],
+        "E11": [
+          {
+            "id": "E11-C1",
+            "description": "5 validateCredit enviados em paralelo: todos confirmados",
+            "pass": true,
+            "detail": "OK — 5 txs confirmadas"
+          },
+          {
+            "id": "E11-C2",
+            "description": "Todos os 5 créditos estão no estado Validated após execução paralela",
+            "pass": true,
+            "detail": "OK"
+          },
+          {
+            "id": "E11-C3",
+            "description": "Transferência concorrente: primeira passa, segunda reverte",
+            "pass": true,
+            "detail": "tx1=OK, tx2=REVERTEU"
+          }
+        ],
+        "summary": {
+          "passed": 16,
+          "total": 16
+        },
+        "passed": 16,
+        "total": 16
+      }
+    },
+    {
+      "script": "e12-performance",
+      "network": "hardhat",
+      "durationMs": 2749,
+      "exitCode": 0,
+      "failed": false,
+      "sourceSha256": "8969fdb69c62b2845e993a922b3a53f287cfd57c36d7ec53d4c094c5c4354e31",
+      "data": {
+        "experiment": "E12+E13",
+        "e14": {
+          "kind": "documentary-context",
+          "measured": false
+        },
+        "network": {
+          "name": "hardhat",
+          "chainId": "31337"
+        },
+        "latency": [
+          {
+            "operation": "issueCredit",
+            "samples": [
+              4,
+              2,
+              3,
+              2,
+              2,
+              1,
+              2,
+              2,
+              3,
+              2
+            ],
+            "minMs": 1,
+            "avgMs": 2,
+            "maxMs": 4
+          },
+          {
+            "operation": "validateCredit",
+            "samples": [
+              1,
+              2,
+              1,
+              1,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2
+            ],
+            "minMs": 1,
+            "avgMs": 2,
+            "maxMs": 2
+          },
+          {
+            "operation": "transferCredit",
+            "samples": [
+              2,
+              2,
+              3,
+              3,
+              2,
+              3,
+              2,
+              2,
+              3,
+              2
+            ],
+            "minMs": 2,
+            "avgMs": 2,
+            "maxMs": 3
+          },
+          {
+            "operation": "retireCredit",
+            "samples": [
+              3,
+              1,
+              1,
+              2,
+              1,
+              1,
+              2,
+              1,
+              1,
+              1
+            ],
+            "minMs": 1,
+            "avgMs": 1,
+            "maxMs": 3
+          }
+        ],
+        "throughput": {
+          "batch": 20,
+          "confirmed": 20,
+          "durationMs": 34,
+          "tps": 588.24
+        }
+      }
+    },
+    {
+      "script": "e15-interface",
+      "network": "hardhat",
+      "durationMs": 2566,
+      "exitCode": 0,
+      "failed": false,
+      "sourceSha256": "470454929e517641abbc6cc0bb6bb48426c1cf31124ecf95d36b74a345ae7321",
+      "data": {
+        "experiment": "E15+E16",
+        "results": [
+          {
+            "id": "E15-D1",
+            "description": "getTotalCredits() retorna 5",
+            "pass": true,
+            "detail": "obtido: 5"
+          },
+          {
+            "id": "E15-D2",
+            "description": "Todos os créditos têm campos não-vazios",
+            "pass": true,
+            "detail": "OK"
+          },
+          {
+            "id": "E15-D3",
+            "description": "Status de cada crédito corresponde às operações realizadas",
+            "pass": true,
+            "detail": "OK"
+          },
+          {
+            "id": "E15-D4",
+            "description": "Owner do crédito #1 é buyer após transferência",
+            "pass": true,
+            "detail": "on-chain=0x3c44cdddb6a900fa2b585dd299e03d12fa4293bc, esperado=0x3c44cdddb6a900fa2b585dd299e03d12fa4293bc"
+          },
+          {
+            "id": "E15-D5",
+            "description": "co2Tonnes preservado sem perda de precisão (uint256)",
+            "pass": true,
+            "detail": "OK"
+          },
+          {
+            "id": "E15-D6",
+            "description": "issuedAt não-zero e crescente entre créditos consecutivos",
+            "pass": true,
+            "detail": "OK — valores: 1794326053,1794326054,1794326055,1794326056,1794326057"
+          },
+          {
+            "id": "E16-L1",
+            "description": "Total de eventos = 12",
+            "pass": true,
+            "detail": "obtido: 12"
+          },
+          {
+            "id": "E16-L2",
+            "description": "Eventos por crédito correspondem às operações realizadas",
+            "pass": true,
+            "detail": "OK"
+          },
+          {
+            "id": "E16-L3",
+            "description": "Todos os eventos têm identidade txHash + logIndex única",
+            "pass": true,
+            "detail": "12 únicos de 12 total"
+          },
+          {
+            "id": "E16-L4",
+            "description": "Eventos ordenados por bloco, transação e log",
+            "pass": true,
+            "detail": "OK"
+          }
+        ],
+        "summary": {
+          "passed": 10,
+          "total": 10
+        },
+        "passed": 10,
+        "total": 10
+      }
+    }
+  ]
+}

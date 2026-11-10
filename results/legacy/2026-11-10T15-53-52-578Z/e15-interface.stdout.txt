@@ -1,0 +1,111 @@
+
+══════════════════════════════════════════════════
+  E15 + E16 — Consistência Interface vs On-Chain
+══════════════════════════════════════════════════
+
+  Créditos no contrato: 5
+  Eventos registrados:  12
+
+  E15 — Verificações de Dados dos Créditos:
+
+
+  E16 — Verificações do Log de Auditoria:
+
+  ID         Descrição                                               Status
+  ────────────────────────────────────────────────────────────────────────────────
+  E15-D1     getTotalCredits() retorna 5                             ✅ OK
+  E15-D2     Todos os créditos têm campos não-vazios                 ✅ OK
+  E15-D3     Status de cada crédito corresponde às operações realizadas ✅ OK
+  E15-D4     Owner do crédito #1 é buyer após transferência          ✅ OK
+  E15-D5     co2Tonnes preservado sem perda de precisão (uint256)    ✅ OK
+  E15-D6     issuedAt não-zero e crescente entre créditos consecutivos ✅ OK
+  E16-L1     Total de eventos = 12                                   ✅ OK
+  E16-L2     Eventos por crédito correspondem às operações realizadas ✅ OK
+  E16-L3     Todos os eventos têm identidade txHash + logIndex única ✅ OK
+  E16-L4     Eventos ordenados por bloco, transação e log            ✅ OK
+
+  RESUMO: 10/10 verificações aprovadas
+  ✅ Interface e on-chain CONSISTENTES — dados e log de auditoria íntegros.
+
+
+  Estado on-chain dos créditos:
+  ID  Nome                          Status       CO₂     Owner (truncado)
+  ────────────────────────────────────────────────────────────────────────────────
+  0   Floresta Amazônica Leste        Retired        1200  0x3C44CdDd...
+  1   Cerrado Central                 Transferred     800  0x3C44CdDd...
+  2   Mata Atlântica Sul              Validated       450  0xf39Fd6e5...
+  3   Pantanal Norte                  Rejected        950  0xf39Fd6e5...
+  4   Caatinga                        Created         320  0xf39Fd6e5...
+
+  [JSON para relatório]
+{
+  "experiment": "E15+E16",
+  "results": [
+    {
+      "id": "E15-D1",
+      "description": "getTotalCredits() retorna 5",
+      "pass": true,
+      "detail": "obtido: 5"
+    },
+    {
+      "id": "E15-D2",
+      "description": "Todos os créditos têm campos não-vazios",
+      "pass": true,
+      "detail": "OK"
+    },
+    {
+      "id": "E15-D3",
+      "description": "Status de cada crédito corresponde às operações realizadas",
+      "pass": true,
+      "detail": "OK"
+    },
+    {
+      "id": "E15-D4",
+      "description": "Owner do crédito #1 é buyer após transferência",
+      "pass": true,
+      "detail": "on-chain=0x3c44cdddb6a900fa2b585dd299e03d12fa4293bc, esperado=0x3c44cdddb6a900fa2b585dd299e03d12fa4293bc"
+    },
+    {
+      "id": "E15-D5",
+      "description": "co2Tonnes preservado sem perda de precisão (uint256)",
+      "pass": true,
+      "detail": "OK"
+    },
+    {
+      "id": "E15-D6",
+      "description": "issuedAt não-zero e crescente entre créditos consecutivos",
+      "pass": true,
+      "detail": "OK — valores: 1794326053,1794326054,1794326055,1794326056,1794326057"
+    },
+    {
+      "id": "E16-L1",
+      "description": "Total de eventos = 12",
+      "pass": true,
+      "detail": "obtido: 12"
+    },
+    {
+      "id": "E16-L2",
+      "description": "Eventos por crédito correspondem às operações realizadas",
+      "pass": true,
+      "detail": "OK"
+    },
+    {
+      "id": "E16-L3",
+      "description": "Todos os eventos têm identidade txHash + logIndex única",
+      "pass": true,
+      "detail": "12 únicos de 12 total"
+    },
+    {
+      "id": "E16-L4",
+      "description": "Eventos ordenados por bloco, transação e log",
+      "pass": true,
+      "detail": "OK"
+    }
+  ],
+  "summary": {
+    "passed": 10,
+    "total": 10
+  },
+  "passed": 10,
+  "total": 10
+}

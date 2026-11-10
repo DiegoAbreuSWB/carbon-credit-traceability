@@ -1,0 +1,96 @@
+{
+  "source": "results/revision/2026-11-10T14-53-09-418Z/raw.json",
+  "definition": "H is audit-event count immediately before rejection; name bytes vary with reason bytes; order reconstructed from the executor loops.",
+  "rows": [
+    {
+      "reasonBytes": 16,
+      "initialCondition": "id=0; H=1",
+      "samples": 5,
+      "meanGas": 168904,
+      "minGas": 168904,
+      "maxGas": 168904,
+      "sdGas": 0.0
+    },
+    {
+      "reasonBytes": 16,
+      "initialCondition": "id=1; H=3",
+      "samples": 5,
+      "meanGas": 188816,
+      "minGas": 188816,
+      "maxGas": 188816,
+      "sdGas": 0.0
+    },
+    {
+      "reasonBytes": 31,
+      "initialCondition": "id=0; H=1",
+      "samples": 5,
+      "meanGas": 169084,
+      "minGas": 169084,
+      "maxGas": 169084,
+      "sdGas": 0.0
+    },
+    {
+      "reasonBytes": 31,
+      "initialCondition": "id=1; H=3",
+      "samples": 5,
+      "meanGas": 188996,
+      "minGas": 188996,
+      "maxGas": 188996,
+      "sdGas": 0.0
+    },
+    {
+      "reasonBytes": 32,
+      "initialCondition": "id=0; H=1",
+      "samples": 5,
+      "meanGas": 191329,
+      "minGas": 191329,
+      "maxGas": 191329,
+      "sdGas": 0.0
+    },
+    {
+      "reasonBytes": 32,
+      "initialCondition": "id=1; H=3",
+      "samples": 5,
+      "meanGas": 211241,
+      "minGas": 211241,
+      "maxGas": 211241,
+      "sdGas": 0.0
+    },
+    {
+      "reasonBytes": 33,
+      "initialCondition": "id=0; H=1",
+      "samples": 5,
+      "meanGas": 213885,
+      "minGas": 213885,
+      "maxGas": 213885,
+      "sdGas": 0.0
+    },
+    {
+      "reasonBytes": 33,
+      "initialCondition": "id=1; H=3",
+      "samples": 5,
+      "meanGas": 233797,
+      "minGas": 233797,
+      "maxGas": 233797,
+      "sdGas": 0.0
+    },
+    {
+      "reasonBytes": 64,
+      "initialCondition": "id=0; H=1",
+      "samples": 5,
+      "meanGas": 214294,
+      "minGas": 214294,
+      "maxGas": 214294,
+      "sdGas": 0.0
+    },
+    {
+      "reasonBytes": 64,
+      "initialCondition": "id=1; H=3",
+      "samples": 5,
+      "meanGas": 234206,
+      "minGas": 234206,
+      "maxGas": 234206,
+      "sdGas": 0.0
+    }
+  ]
+}

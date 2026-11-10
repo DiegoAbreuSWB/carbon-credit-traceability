@@ -15,7 +15,7 @@
     "frontend:dev": "npm run dev --prefix frontend",
     "frontend:build": "npm run build --prefix frontend",
     "frontend:typecheck": "npm run typecheck --prefix frontend",
-    "check": "npm run compile && npm run test && npm run frontend:typecheck && npm run frontend:build",
+    "check": "npm run compile && npm run typecheck && npm test && npm run frontend:typecheck && npm run frontend:build",
     "setup:local": "powershell -ExecutionPolicy Bypass -File scripts/setup-local.ps1",
     "setup:linux": "bash scripts/setup-local.sh",
     "besu:up": "docker compose -f besu/docker-compose.yml up -d",
@@ -30,20 +30,25 @@
     "exp:e9": "hardhat run scripts/experiments/e9-security.ts --network localhost",
     "exp:e12": "hardhat run scripts/experiments/e12-performance.ts --network localhost",
     "exp:e15": "hardhat run scripts/experiments/e15-interface.ts --network localhost",
-    "exp:all": "hardhat run scripts/experiments/run-all.ts --network localhost"
+    "exp:all": "hardhat run scripts/experiments/run-all.ts --network localhost",
+    "typecheck": "tsc --noEmit",
+    "exp:revision": "hardhat run scripts/experiments/revision-benchmarks.ts --network hardhat",
+    "exp:history": "hardhat run scripts/experiments/revision-history.ts --network hardhat",
+    "exp:all:isolated": "hardhat run scripts/experiments/run-all.ts --network hardhat",
+    "exp:audit-gas": "hardhat run scripts/experiments/audit-gas-limit.ts --network hardhat"
   },
   "devDependencies": {
-    "@nomicfoundation/hardhat-toolbox": "^4.0.0",
-    "@types/chai": "^4.3.11",
-    "@types/mocha": "^10.0.6",
-    "@types/node": "^20.11.0",
-    "chai": "^4.4.1",
-    "hardhat": "^2.19.4",
-    "ts-node": "^10.9.2",
-    "typescript": "^5.3.3"
+    "@nomicfoundation/hardhat-toolbox": "4.0.0",
+    "@types/chai": "4.3.20",
+    "@types/mocha": "10.0.10",
+    "@types/node": "20.19.43",
+    "chai": "4.5.0",
+    "hardhat": "2.28.6",
+    "ts-node": "10.9.2",
+    "typescript": "5.9.3"
   },
   "dependencies": {
-    "@openzeppelin/contracts": "^5.0.1",
-    "ethers": "^6.10.0"
+    "@openzeppelin/contracts": "5.6.1",
+    "ethers": "6.17.0"
   }
 }

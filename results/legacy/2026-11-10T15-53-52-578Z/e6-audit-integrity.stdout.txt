@@ -1,0 +1,146 @@
+
+══════════════════════════════════════════════════
+  E6 — Completude do Log de Auditoria
+══════════════════════════════════════════════════
+
+  Total de eventos capturados: 8
+
+  ID           Descrição                                            Status
+  ────────────────────────────────────────────────────────────────────────────────
+  E6-C1        Sequência de eventos corresponde às operações realizadas ✅ OK
+               ↳ OK — 8 eventos na ordem correta
+  E6-C2        Todos os eventos têm blockNumber e txHash válidos    ✅ OK
+  E6-C3        Todos os eventos de crédito contêm o campo creditId  ✅ OK
+  E6-C4        CreditRejected inclui campo reason não-vazio         ✅ OK
+               ↳ OK — 1 rejeição(ões) com razão registrada
+
+  E6: 4/4 aprovados
+
+══════════════════════════════════════════════════
+  E7 — Reprodutibilidade: Replay de Eventos
+══════════════════════════════════════════════════
+
+
+  ID           Descrição                                            Status
+  ────────────────────────────────────────────────────────────────────────────────
+  E7-R0        Crédito #0: estado e proprietário reconstituídos por replay ✅ OK
+               ↳ replay="Retired" on-chain="Retired" ownerMatch=true
+  E7-R1        Crédito #1: estado e proprietário reconstituídos por replay ✅ OK
+               ↳ replay="Rejected" on-chain="Rejected" ownerMatch=true
+  E7-R2        Crédito #2: estado e proprietário reconstituídos por replay ✅ OK
+               ↳ replay="Validated" on-chain="Validated" ownerMatch=true
+  E7-TOTAL     Todos os estados reconstituídos por replay batem com on-chain ✅ OK
+
+  E7: 4/4 aprovados
+
+══════════════════════════════════════════════════
+  E8 — Imutabilidade do Histórico
+══════════════════════════════════════════════════
+
+
+  ID           Descrição                                            Status
+  ────────────────────────────────────────────────────────────────────────────────
+  E8-I1        Eventos históricos permanecem inalterados após nova operação ✅ OK
+               ↳ OK — histórico imutável confirmado
+  E8-I2        Nova operação ACRESCENTA evento sem remover existentes ✅ OK
+               ↳ antes=8, depois=9 — OK
+  E8-I3        Blocos dos eventos são monotonicamente crescentes    ✅ OK
+
+  E8: 3/3 aprovados
+
+
+  RESUMO GERAL: 11/11 verificações aprovadas
+  ✅ Log de auditoria COMPLETO, REPRODUZÍVEL e IMUTÁVEL.
+
+
+  Eventos registrados:
+    [Bloco 2] CreditIssued creditId=0 tx=0xa535dc7611bc...
+    [Bloco 3] CreditValidated creditId=0 tx=0x06a010b42e43...
+    [Bloco 4] CreditTransferred creditId=0 tx=0x5190527613ac...
+    [Bloco 5] CreditRetired creditId=0 tx=0xb4191913251a...
+    [Bloco 6] CreditIssued creditId=1 tx=0x932f2c4091ff...
+    [Bloco 7] CreditRejected creditId=1 tx=0xa286570a3ec9...
+    [Bloco 8] CreditIssued creditId=2 tx=0xd5e23cfdc0f2...
+    [Bloco 9] CreditValidated creditId=2 tx=0xaeca1c49c98d...
+
+  [JSON para relatório]
+{
+  "E6": [
+    {
+      "id": "E6-C1",
+      "description": "Sequência de eventos corresponde às operações realizadas",
+      "pass": true,
+      "detail": "OK — 8 eventos na ordem correta"
+    },
+    {
+      "id": "E6-C2",
+      "description": "Todos os eventos têm blockNumber e txHash válidos",
+      "pass": true,
+      "detail": "OK"
+    },
+    {
+      "id": "E6-C3",
+      "description": "Todos os eventos de crédito contêm o campo creditId",
+      "pass": true,
+      "detail": "OK"
+    },
+    {
+      "id": "E6-C4",
+      "description": "CreditRejected inclui campo reason não-vazio",
+      "pass": true,
+      "detail": "OK — 1 rejeição(ões) com razão registrada"
+    }
+  ],
+  "E7": [
+    {
+      "id": "E7-R0",
+      "description": "Crédito #0: estado e proprietário reconstituídos por replay",
+      "pass": true,
+      "detail": "replay=\"Retired\" on-chain=\"Retired\" ownerMatch=true"
+    },
+    {
+      "id": "E7-R1",
+      "description": "Crédito #1: estado e proprietário reconstituídos por replay",
+      "pass": true,
+      "detail": "replay=\"Rejected\" on-chain=\"Rejected\" ownerMatch=true"
+    },
+    {
+      "id": "E7-R2",
+      "description": "Crédito #2: estado e proprietário reconstituídos por replay",
+      "pass": true,
+      "detail": "replay=\"Validated\" on-chain=\"Validated\" ownerMatch=true"
+    },
+    {
+      "id": "E7-TOTAL",
+      "description": "Todos os estados reconstituídos por replay batem com on-chain",
+      "pass": true,
+      "detail": "OK"
+    }
+  ],
+  "E8": [
+    {
+      "id": "E8-I1",
+      "description": "Eventos históricos permanecem inalterados após nova operação",
+      "pass": true,
+      "detail": "OK — histórico imutável confirmado"
+    },
+    {
+      "id": "E8-I2",
+      "description": "Nova operação ACRESCENTA evento sem remover existentes",
+      "pass": true,
+      "detail": "antes=8, depois=9 — OK"
+    },
+    {
+      "id": "E8-I3",
+      "description": "Blocos dos eventos são monotonicamente crescentes",
+      "pass": true,
+      "detail": "OK"
+    }
+  ],
+  "summary": {
+    "passed": 11,
+    "total": 11
+  },
+  "passed": 11,
+  "total": 11
+}

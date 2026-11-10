@@ -1,3 +1,4 @@
+import { CarbonCreditRegistry__factory } from "../../typechain-types";
 /**
  * E4 — Escalabilidade: Gas em Função do Volume de Créditos
  *
@@ -28,7 +29,7 @@ interface VolumeResult {
 
 async function main() {
   const [owner, validator, buyer] = await ethers.getSigners();
-  const Factory = await ethers.getContractFactory("CarbonCreditRegistry");
+  const Factory = new CarbonCreditRegistry__factory((await ethers.getSigners())[0]);
 
   console.log("\n══════════════════════════════════════════════════");
   console.log("  E4 — Escalabilidade: Gas vs Volume de Créditos");
@@ -81,14 +82,13 @@ async function main() {
     const ops: (keyof Omit<VolumeResult, "volume" | "getTotalCreditsGas">)[] = ["issueGas", "validateGas", "transferGas", "retireGas"];
     for (const op of ops) {
       const ratio = Number(last[op]) / Number(base[op]);
-      const trend = ratio < 1.02 ? "CONSTANTE (O(1))" : ratio < 1.1 ? "Quase constante" : "Cresce com volume";
+      const trend = ratio < 1.02 ? "variacao inferior a 2%" : ratio < 1.1 ? "Quase constante" : "Cresce com volume";
       const delta = Number(last[op]) - Number(base[op]);
       console.log(`  ${op.padEnd(16)}: V=${last.volume}/${base.volume} → ratio=${ratio.toFixed(4)}, delta=${delta} gas — ${trend}`);
     }
   }
 
-  console.log("\n  Conclusão esperada: gas por operação é CONSTANTE independente do volume,");
-  console.log("  pois as operações usam mapeamento (O(1)), não iteração sobre array.\n");
+  console.log("Resultados restritos aos cenarios medidos; consultas de historico exigem avaliacao propria.");
 
   return {
     experiment: "E4",

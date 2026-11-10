@@ -1,3 +1,4 @@
+import { CarbonCreditRegistry__factory } from "../../typechain-types";
 /**
  * E6 + E7 + E8 — Integridade do Log de Auditoria
  *
@@ -10,7 +11,7 @@
 
 import { ethers } from "hardhat";
 
-type EventLog = { event: string; args: Record<string, string>; blockNumber: number; txHash: string };
+type EventLog = { event: string; args: Record<string, string>; blockNumber: number; transactionIndex: number; logIndex: number; txHash: string };
 
 async function getEvents(contract: any, fromBlock: number = 0): Promise<EventLog[]> {
   const address = await contract.getAddress();
@@ -26,9 +27,9 @@ async function getEvents(contract: any, fromBlock: number = 0): Promise<EventLog
         const name = parsed.fragment.inputs[i]?.name ?? `arg${i}`;
         args[name] = v.toString();
       });
-      return { event: parsed?.name ?? "Unknown", args, blockNumber: log.blockNumber, txHash: log.transactionHash };
+      return { event: parsed?.name ?? "Unknown", args, blockNumber: log.blockNumber, transactionIndex: log.transactionIndex, logIndex: log.index, txHash: log.transactionHash };
     } catch {
-      return { event: "Unknown", args: {}, blockNumber: log.blockNumber, txHash: log.transactionHash };
+      return { event: "Unknown", args: {}, blockNumber: log.blockNumber, transactionIndex: log.transactionIndex, logIndex: log.index, txHash: log.transactionHash };
     }
   });
 }
@@ -37,7 +38,7 @@ interface TestResult { id: string; description: string; pass: boolean; detail: s
 
 async function main() {
   const [owner, validator, buyer] = await ethers.getSigners();
-  const Factory = await ethers.getContractFactory("CarbonCreditRegistry");
+  const Factory = new CarbonCreditRegistry__factory((await ethers.getSigners())[0]);
   const results: TestResult[] = [];
 
   // ────────────────────────────────────────────────────────────
@@ -153,12 +154,13 @@ async function main() {
     const onChain = await contract.getCredit(id);
     const onChainStatus = STATUS[Number(onChain.status)];
     const statusMatch = replayCredit.status === onChainStatus;
-    if (!statusMatch) allMatch = false;
+    const ownerMatch = replayCredit.owner.toLowerCase() === onChain.owner.toLowerCase();
+    if (!statusMatch || !ownerMatch) allMatch = false;
     resultsE7.push({
       id: `E7-R${id}`,
-      description: `Crédito #${id}: status reconstituído por replay`,
-      pass: statusMatch,
-      detail: `replay="${replayCredit.status}" on-chain="${onChainStatus}"`,
+      description: `Crédito #${id}: estado e proprietário reconstituídos por replay`,
+      pass: statusMatch && ownerMatch,
+      detail: `replay="${replayCredit.status}" on-chain="${onChainStatus}" ownerMatch=${ownerMatch}`,
     });
   }
   resultsE7.push({
@@ -180,7 +182,7 @@ async function main() {
   const resultsE8: TestResult[] = [];
 
   // Snapshot dos eventos antes de novas operações
-  const snapshotBefore = JSON.stringify(allEvents.map((e) => ({ event: e.event, txHash: e.txHash, blockNumber: e.blockNumber })));
+  const snapshotBefore = JSON.stringify(allEvents);
 
   // Realiza operação nova
   await (await contract.connect(owner).issueCredit("Área Delta", "Roraima, BR", "2.0,-61.0", 200n)).wait();
@@ -188,8 +190,7 @@ async function main() {
   // Relê eventos do mesmo intervalo (fromBlock=deployBlock até o bloco da snapshot)
   const snapshotAfter = JSON.stringify(
     (await getEvents(contract, deployBlock))
-      .filter((e) => allEvents.some((a) => a.txHash === e.txHash))
-      .map((e) => ({ event: e.event, txHash: e.txHash, blockNumber: e.blockNumber }))
+      .filter((e) => e.blockNumber <= allEvents[allEvents.length - 1].blockNumber)
   );
 
   const historyUnchanged = snapshotBefore === snapshotAfter;
@@ -255,6 +256,7 @@ function printResults(results: TestResult[], group: string) {
 main()
   .then((data) => {
     console.log("\n  [JSON para relatório]");
-    console.log(JSON.stringify({ experiment: "E6+E7+E8", ...data.summary }, null, 2));
+    console.log(JSON.stringify({ ...data, ...data.summary }, null, 2));
+    if (data.summary.passed !== data.summary.total) process.exitCode = 1;
   })
   .catch((err) => { console.error(err); process.exit(1); });

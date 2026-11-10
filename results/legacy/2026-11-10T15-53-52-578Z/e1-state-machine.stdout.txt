@@ -1,0 +1,63 @@
+
+══════════════════════════════════════════════════
+  E1 — Transições de Estado VÁLIDAS
+══════════════════════════════════════════════════
+
+  ID         Descrição                                        Esperado   Obtido       Status
+  ─────────────────────────────────────────────────────────────────────────────────────────────────────────
+  E1-T1      issueCredit → Created                            Created    Created      ✅ OK
+  E1-T2      validateCredit → Validated                       Validated  Validated    ✅ OK
+  E1-T3      transferCredit → Transferred                     Transferred Transferred  ✅ OK
+  E1-T4      re-transferCredit → Transferred                  Transferred Transferred  ✅ OK
+  E1-T5      retireCredit (Transferred) → Retired             Retired    Retired      ✅ OK
+  E1-T6      rejectCredit → Rejected                          Rejected   Rejected     ✅ OK
+  E1-T7      retireCredit (Validated) → Retired               Retired    Retired      ✅ OK
+
+  E1: 7/7 aprovados
+
+
+══════════════════════════════════════════════════
+  E2 — Transições de Estado INVÁLIDAS (reverts)
+══════════════════════════════════════════════════
+
+  ID         Descrição                                        Esperado   Obtido       Status
+  ─────────────────────────────────────────────────────────────────────────────────────────────────────────
+  E2-I01     Created → retire (sem validação)                 REVERT     REVERT       ✅ OK
+             ↳ CCR: apenas creditos validados ou transferidos podem ser apo
+  E2-I02     Created → transfer (sem validação)               REVERT     REVERT       ✅ OK
+             ↳ CCR: apenas creditos validados ou transferidos podem ser tra
+  E2-I03     Validated → validate (já validado)               REVERT     REVERT       ✅ OK
+             ↳ CCR: apenas creditos no estado Created podem ser validados
+  E2-I04     Validated → reject (já validado)                 REVERT     REVERT       ✅ OK
+             ↳ CCR: apenas creditos no estado Created podem ser rejeitados
+  E2-I05     Transferred → validate                           REVERT     REVERT       ✅ OK
+             ↳ CCR: apenas creditos no estado Created podem ser validados
+  E2-I06     Transferred → reject                             REVERT     REVERT       ✅ OK
+             ↳ CCR: apenas creditos no estado Created podem ser rejeitados
+  E2-I07     Retired → transfer                               REVERT     REVERT       ✅ OK
+             ↳ CCR: credito aposentado nao pode ser transferido
+  E2-I08     Retired → retire (double-retirement)             REVERT     REVERT       ✅ OK
+             ↳ CCR: apenas creditos validados ou transferidos podem ser apo
+  E2-I09     Retired → validate                               REVERT     REVERT       ✅ OK
+             ↳ CCR: apenas creditos no estado Created podem ser validados
+  E2-I10     Rejected → validate                              REVERT     REVERT       ✅ OK
+             ↳ CCR: apenas creditos no estado Created podem ser validados
+  E2-I11     Rejected → transfer                              REVERT     REVERT       ✅ OK
+             ↳ CCR: apenas creditos validados ou transferidos podem ser tra
+  E2-I12     transfer por não-proprietário (other)            REVERT     REVERT       ✅ OK
+             ↳ CCR: nao e o proprietario
+  E2-I13     retire por não-proprietário (other)              REVERT     REVERT       ✅ OK
+             ↳ CCR: nao e o proprietario
+  E2-I14     issueCredit com nome vazio                       REVERT     REVERT       ✅ OK
+             ↳ CCR: nome da area obrigatorio
+  E2-I15     issueCredit com CO2=0                            REVERT     REVERT       ✅ OK
+             ↳ CCR: quantidade de CO2 deve ser positiva
+  E2-I16     getCredit de ID inexistente                      REVERT     REVERT       ✅ OK
+             ↳ CCR: credito inexistente
+
+  E2: 16/16 aprovados
+
+
+  RESUMO: 23/23 testes aprovados
+  ✅ Máquina de estados CORRETA — todas as transições verificadas.
+

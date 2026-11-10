@@ -1,0 +1,110 @@
+{
+  "E9": [
+    {
+      "id": "E9-A1",
+      "description": "Atacante não pode transferir crédito do owner",
+      "pass": true,
+      "detail": "VM Exception while processing transaction: reverted with reason string 'CCR: nao"
+    },
+    {
+      "id": "E9-A2",
+      "description": "Atacante não pode aposentar crédito do owner",
+      "pass": true,
+      "detail": "VM Exception while processing transaction: reverted with reason string 'CCR: nao"
+    },
+    {
+      "id": "E9-A3",
+      "description": "Atacante não pode validar crédito (qualquer conta pode validar — sem Role)",
+      "pass": true,
+      "detail": "NÃO reverteu"
+    },
+    {
+      "id": "E9-A4",
+      "description": "Buyer pode transferir seu próprio crédito (id=2)",
+      "pass": true,
+      "detail": "NÃO reverteu"
+    },
+    {
+      "id": "E9-A5",
+      "description": "Atacante não pode transferir crédito do buyer após transferência acima",
+      "pass": true,
+      "detail": "VM Exception while processing transaction: reverted with reason string 'CCR: nao"
+    },
+    {
+      "id": "E9-A6",
+      "description": "Owner não pode aposentar crédito transferido para buyer/other",
+      "pass": true,
+      "detail": "VM Exception while processing transaction: reverted with reason string 'CCR: nao"
+    },
+    {
+      "id": "E9-A7",
+      "description": "Transferência para endereço zero reverted",
+      "pass": true,
+      "detail": "VM Exception while processing transaction: reverted with reason string 'CCR: des"
+    }
+  ],
+  "E10": [
+    {
+      "id": "E10-D1",
+      "description": "Retirar crédito já aposentado (double-retirement)",
+      "pass": true,
+      "detail": "VM Exception while processing transaction: reverted with reason string 'CCR: ape"
+    },
+    {
+      "id": "E10-D2",
+      "description": "Transferir crédito aposentado",
+      "pass": true,
+      "detail": "VM Exception while processing transaction: reverted with reason string 'CCR: cre"
+    },
+    {
+      "id": "E10-D3",
+      "description": "Validar crédito aposentado",
+      "pass": true,
+      "detail": "VM Exception while processing transaction: reverted with reason string 'CCR: ape"
+    },
+    {
+      "id": "E10-D4",
+      "description": "Rejeitar crédito aposentado",
+      "pass": true,
+      "detail": "VM Exception while processing transaction: reverted with reason string 'CCR: ape"
+    },
+    {
+      "id": "E10-D5",
+      "description": "Validar crédito já validado (double-validation)",
+      "pass": true,
+      "detail": "VM Exception while processing transaction: reverted with reason string 'CCR: ape"
+    },
+    {
+      "id": "E10-D6",
+      "description": "Rejeitar crédito já validado",
+      "pass": true,
+      "detail": "VM Exception while processing transaction: reverted with reason string 'CCR: ape"
+    }
+  ],
+  "E11": [
+    {
+      "id": "E11-C1",
+      "description": "5 validateCredit enviados em paralelo: todos confirmados",
+      "pass": true,
+      "detail": "OK — 5 txs confirmadas"
+    },
+    {
+      "id": "E11-C2",
+      "description": "Todos os 5 créditos estão no estado Validated após execução paralela",
+      "pass": true,
+      "detail": "OK"
+    },
+    {
+      "id": "E11-C3",
+      "description": "Transferência concorrente: primeira passa, segunda reverte",
+      "pass": true,
+      "detail": "tx1=OK, tx2=REVERTEU"
+    }
+  ],
+  "summary": {
+    "passed": 16,
+    "total": 16
+  },
+  "passed": 16,
+  "total": 16
+}

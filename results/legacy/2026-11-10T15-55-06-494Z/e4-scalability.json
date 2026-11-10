@@ -1,0 +1,47 @@
+{
+  "experiment": "E4",
+  "volumes": [
+    1,
+    10,
+    50,
+    100,
+    200
+  ],
+  "results": [
+    {
+      "volume": 1,
+      "issueGas": "331086",
+      "validateGas": "146932",
+      "transferGas": "203931",
+      "retireGas": "110169"
+    },
+    {
+      "volume": 10,
+      "issueGas": "339486",
+      "validateGas": "166844",
+      "transferGas": "223843",
+      "retireGas": "130081"
+    },
+    {
+      "volume": 50,
+      "issueGas": "339498",
+      "validateGas": "166844",
+      "transferGas": "223843",
+      "retireGas": "130081"
+    },
+    {
+      "volume": 100,
+      "issueGas": "339498",
+      "validateGas": "166844",
+      "transferGas": "223843",
+      "retireGas": "130081"
+    },
+    {
+      "volume": 200,
+      "issueGas": "339510",
+      "validateGas": "166844",
+      "transferGas": "223843",
+      "retireGas": "130081"
+    }
+  ]
+}

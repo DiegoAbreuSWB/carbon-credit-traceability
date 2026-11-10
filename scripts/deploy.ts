@@ -1,3 +1,4 @@
+import { CarbonCreditRegistry__factory } from "../typechain-types";
 import { ethers, network } from "hardhat";
 import * as fs from "fs";
 import * as path from "path";
@@ -9,7 +10,7 @@ async function main() {
   console.log(`   Deployer: ${deployer.address}`);
   console.log(`   Saldo:    ${ethers.formatEther(await ethers.provider.getBalance(deployer.address))} ETH\n`);
 
-  const Factory = await ethers.getContractFactory("CarbonCreditRegistry");
+  const Factory = new CarbonCreditRegistry__factory((await ethers.getSigners())[0]);
   console.log("   Implantando CarbonCreditRegistry...");
   const registry = await Factory.deploy();
   await registry.waitForDeployment();

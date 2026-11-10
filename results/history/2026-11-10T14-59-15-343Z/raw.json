@@ -1,0 +1,2003 @@
+{
+  "profile": "full",
+  "status": "completed",
+  "volumes": [
+    10,
+    100,
+    500,
+    1000,
+    2000
+  ],
+  "rounds": 3,
+  "samples": 3,
+  "rows": [
+    {
+      "round": 1,
+      "volume": 10,
+      "events": 20,
+      "sample": 1,
+      "operation": "getLogs",
+      "durationMs": 3.0497,
+      "count": 20,
+      "success": true
+    },
+    {
+      "round": 1,
+      "volume": 10,
+      "events": 20,
+      "sample": 1,
+      "operation": "replay",
+      "durationMs": 11.2182,
+      "count": 10,
+      "success": true
+    },
+    {
+      "round": 1,
+      "volume": 10,
+      "events": 20,
+      "sample": 1,
+      "operation": "getAuditLog",
+      "durationMs": 10.3761,
+      "count": 20,
+      "success": true
+    },
+    {
+      "round": 1,
+      "volume": 10,
+      "events": 20,
+      "sample": 1,
+      "operation": "getCreditEvents",
+      "durationMs": 3.7474,
+      "count": 5,
+      "success": true
+    },
+    {
+      "round": 1,
+      "volume": 10,
+      "events": 20,
+      "sample": 2,
+      "operation": "getLogs",
+      "durationMs": 5.0567,
+      "count": 20,
+      "success": true
+    },
+    {
+      "round": 1,
+      "volume": 10,
+      "events": 20,
+      "sample": 2,
+      "operation": "replay",
+      "durationMs": 11.887,
+      "count": 10,
+      "success": true
+    },
+    {
+      "round": 1,
+      "volume": 10,
+      "events": 20,
+      "sample": 2,
+      "operation": "getAuditLog",
+      "durationMs": 9.9911,
+      "count": 20,
+      "success": true
+    },
+    {
+      "round": 1,
+      "volume": 10,
+      "events": 20,
+      "sample": 2,
+      "operation": "getCreditEvents",
+      "durationMs": 3.6082,
+      "count": 5,
+      "success": true
+    },
+    {
+      "round": 1,
+      "volume": 10,
+      "events": 20,
+      "sample": 3,
+      "operation": "getLogs",
+      "durationMs": 2.8914,
+      "count": 20,
+      "success": true
+    },
+    {
+      "round": 1,
+      "volume": 10,
+      "events": 20,
+      "sample": 3,
+      "operation": "replay",
+      "durationMs": 11.8006,
+      "count": 10,
+      "success": true
+    },
+    {
+      "round": 1,
+      "volume": 10,
+      "events": 20,
+      "sample": 3,
+      "operation": "getAuditLog",
+      "durationMs": 9.3694,
+      "count": 20,
+      "success": true
+    },
+    {
+      "round": 1,
+      "volume": 10,
+      "events": 20,
+      "sample": 3,
+      "operation": "getCreditEvents",
+      "durationMs": 4.3785,
+      "count": 5,
+      "success": true
+    },
+    {
+      "round": 1,
+      "volume": 100,
+      "events": 110,
+      "sample": 1,
+      "operation": "getLogs",
+      "durationMs": 11.4964,
+      "count": 110,
+      "success": true
+    },
+    {
+      "round": 1,
+      "volume": 100,
+      "events": 110,
+      "sample": 1,
+      "operation": "replay",
+      "durationMs": 68.0517,
+      "count": 100,
+      "success": true
+    },
+    {
+      "round": 1,
+      "volume": 100,
+      "events": 110,
+      "sample": 1,
+      "operation": "getAuditLog",
+      "durationMs": 91.9636,
+      "count": 110,
+      "success": true
+    },
+    {
+      "round": 1,
+      "volume": 100,
+      "events": 110,
+      "sample": 1,
+      "operation": "getCreditEvents",
+      "durationMs": 10.8327,
+      "count": 5,
+      "success": true
+    },
+    {
+      "round": 1,
+      "volume": 100,
+      "events": 110,
+      "sample": 2,
+      "operation": "getLogs",
+      "durationMs": 10.2298,
+      "count": 110,
+      "success": true
+    },
+    {
+      "round": 1,
+      "volume": 100,
+      "events": 110,
+      "sample": 2,
+      "operation": "replay",
+      "durationMs": 87.5018,
+      "count": 100,
+      "success": true
+    },
+    {
+      "round": 1,
+      "volume": 100,
+      "events": 110,
+      "sample": 2,
+      "operation": "getAuditLog",
+      "durationMs": 94.0096,
+      "count": 110,
+      "success": true
+    },
+    {
+      "round": 1,
+      "volume": 100,
+      "events": 110,
+      "sample": 2,
+      "operation": "getCreditEvents",
+      "durationMs": 7.7802,
+      "count": 5,
+      "success": true
+    },
+    {
+      "round": 1,
+      "volume": 100,
+      "events": 110,
+      "sample": 3,
+      "operation": "getLogs",
+      "durationMs": 12.776,
+      "count": 110,
+      "success": true
+    },
+    {
+      "round": 1,
+      "volume": 100,
+      "events": 110,
+      "sample": 3,
+      "operation": "replay",
+      "durationMs": 72.786,
+      "count": 100,
+      "success": true
+    },
+    {
+      "round": 1,
+      "volume": 100,
+      "events": 110,
+      "sample": 3,
+      "operation": "getAuditLog",
+      "durationMs": 89.9876,
+      "count": 110,
+      "success": true
+    },
+    {
+      "round": 1,
+      "volume": 100,
+      "events": 110,
+      "sample": 3,
+      "operation": "getCreditEvents",
+      "durationMs": 7.1862,
+      "count": 5,
+      "success": true
+    },
+    {
+      "round": 1,
+      "volume": 500,
+      "events": 510,
+      "sample": 1,
+      "operation": "getLogs",
+      "durationMs": 47.942,
+      "count": 510,
+      "success": true
+    },
+    {
+      "round": 1,
+      "volume": 500,
+      "events": 510,
+      "sample": 1,
+      "operation": "replay",
+      "durationMs": 234.7113,
+      "count": 500,
+      "success": true
+    },
+    {
+      "round": 1,
+      "volume": 500,
+      "events": 510,
+      "sample": 1,
+      "operation": "getAuditLog",
+      "durationMs": 1173.9315,
+      "count": 510,
+      "success": true
+    },
+    {
+      "round": 1,
+      "volume": 500,
+      "events": 510,
+      "sample": 1,
+      "operation": "getCreditEvents",
+      "durationMs": 37.2393,
+      "count": 5,
+      "success": true
+    },
+    {
+      "round": 1,
+      "volume": 500,
+      "events": 510,
+      "sample": 2,
+      "operation": "getLogs",
+      "durationMs": 53.5862,
+      "count": 510,
+      "success": true
+    },
+    {
+      "round": 1,
+      "volume": 500,
+      "events": 510,
+      "sample": 2,
+      "operation": "replay",
+      "durationMs": 266.5011,
+      "count": 500,
+      "success": true
+    },
+    {
+      "round": 1,
+      "volume": 500,
+      "events": 510,
+      "sample": 2,
+      "operation": "getAuditLog",
+      "durationMs": 806.841,
+      "count": 510,
+      "success": true
+    },
+    {
+      "round": 1,
+      "volume": 500,
+      "events": 510,
+      "sample": 2,
+      "operation": "getCreditEvents",
+      "durationMs": 31.5521,
+      "count": 5,
+      "success": true
+    },
+    {
+      "round": 1,
+      "volume": 500,
+      "events": 510,
+      "sample": 3,
+      "operation": "getLogs",
+      "durationMs": 52.9899,
+      "count": 510,
+      "success": true
+    },
+    {
+      "round": 1,
+      "volume": 500,
+      "events": 510,
+      "sample": 3,
+      "operation": "replay",
+      "durationMs": 232.4587,
+      "count": 500,
+      "success": true
+    },
+    {
+      "round": 1,
+      "volume": 500,
+      "events": 510,
+      "sample": 3,
+      "operation": "getAuditLog",
+      "durationMs": 888.4799,
+      "count": 510,
+      "success": true
+    },
+    {
+      "round": 1,
+      "volume": 500,
+      "events": 510,
+      "sample": 3,
+      "operation": "getCreditEvents",
+      "durationMs": 21.5669,
+      "count": 5,
+      "success": true
+    },
+    {
+      "round": 1,
+      "volume": 1000,
+      "events": 1010,
+      "sample": 1,
+      "operation": "getLogs",
+      "durationMs": 94.9637,
+      "count": 1010,
+      "success": true
+    },
+    {
+      "round": 1,
+      "volume": 1000,
+      "events": 1010,
+      "sample": 1,
+      "operation": "replay",
+      "durationMs": 466.5133,
+      "count": 1000,
+      "success": true
+    },
+    {
+      "round": 1,
+      "volume": 1000,
+      "events": 1010,
+      "sample": 1,
+      "operation": "getAuditLog",
+      "durationMs": 1261.266,
+      "count": 1010,
+      "success": true
+    },
+    {
+      "round": 1,
+      "volume": 1000,
+      "events": 1010,
+      "sample": 1,
+      "operation": "getCreditEvents",
+      "durationMs": 27.4865,
+      "count": 5,
+      "success": true
+    },
+    {
+      "round": 1,
+      "volume": 1000,
+      "events": 1010,
+      "sample": 2,
+      "operation": "getLogs",
+      "durationMs": 97.1284,
+      "count": 1010,
+      "success": true
+    },
+    {
+      "round": 1,
+      "volume": 1000,
+      "events": 1010,
+      "sample": 2,
+      "operation": "replay",
+      "durationMs": 527.6254,
+      "count": 1000,
+      "success": true
+    },
+    {
+      "round": 1,
+      "volume": 1000,
+      "events": 1010,
+      "sample": 2,
+      "operation": "getAuditLog",
+      "durationMs": 1252.4793,
+      "count": 1010,
+      "success": true
+    },
+    {
+      "round": 1,
+      "volume": 1000,
+      "events": 1010,
+      "sample": 2,
+      "operation": "getCreditEvents",
+      "durationMs": 38.1658,
+      "count": 5,
+      "success": true
+    },
+    {
+      "round": 1,
+      "volume": 1000,
+      "events": 1010,
+      "sample": 3,
+      "operation": "getLogs",
+      "durationMs": 99.4382,
+      "count": 1010,
+      "success": true
+    },
+    {
+      "round": 1,
+      "volume": 1000,
+      "events": 1010,
+      "sample": 3,
+      "operation": "replay",
+      "durationMs": 490.9935,
+      "count": 1000,
+      "success": true
+    },
+    {
+      "round": 1,
+      "volume": 1000,
+      "events": 1010,
+      "sample": 3,
+      "operation": "getAuditLog",
+      "durationMs": 1227.6531,
+      "count": 1010,
+      "success": true
+    },
+    {
+      "round": 1,
+      "volume": 1000,
+      "events": 1010,
+      "sample": 3,
+      "operation": "getCreditEvents",
+      "durationMs": 54.8697,
+      "count": 5,
+      "success": true
+    },
+    {
+      "round": 1,
+      "volume": 2000,
+      "events": 2010,
+      "sample": 1,
+      "operation": "getLogs",
+      "durationMs": 195.7325,
+      "count": 2010,
+      "success": true
+    },
+    {
+      "round": 1,
+      "volume": 2000,
+      "events": 2010,
+      "sample": 1,
+      "operation": "replay",
+      "durationMs": 978.9642,
+      "count": 2000,
+      "success": true
+    },
+    {
+      "round": 1,
+      "volume": 2000,
+      "events": 2010,
+      "sample": 1,
+      "operation": "getAuditLog",
+      "durationMs": 294.7291,
+      "success": false,
+      "error": "Transaction ran out of gas"
+    },
+    {
+      "round": 1,
+      "volume": 2000,
+      "events": 2010,
+      "sample": 1,
+      "operation": "getCreditEvents",
+      "durationMs": 108.5502,
+      "count": 5,
+      "success": true
+    },
+    {
+      "round": 1,
+      "volume": 2000,
+      "events": 2010,
+      "sample": 2,
+      "operation": "getLogs",
+      "durationMs": 202.9431,
+      "count": 2010,
+      "success": true
+    },
+    {
+      "round": 1,
+      "volume": 2000,
+      "events": 2010,
+      "sample": 2,
+      "operation": "replay",
+      "durationMs": 1018.1318,
+      "count": 2000,
+      "success": true
+    },
+    {
+      "round": 1,
+      "volume": 2000,
+      "events": 2010,
+      "sample": 2,
+      "operation": "getAuditLog",
+      "durationMs": 239.8565,
+      "success": false,
+      "error": "Transaction ran out of gas"
+    },
+    {
+      "round": 1,
+      "volume": 2000,
+      "events": 2010,
+      "sample": 2,
+      "operation": "getCreditEvents",
+      "durationMs": 71.9666,
+      "count": 5,
+      "success": true
+    },
+    {
+      "round": 1,
+      "volume": 2000,
+      "events": 2010,
+      "sample": 3,
+      "operation": "getLogs",
+      "durationMs": 187.4048,
+      "count": 2010,
+      "success": true
+    },
+    {
+      "round": 1,
+      "volume": 2000,
+      "events": 2010,
+      "sample": 3,
+      "operation": "replay",
+      "durationMs": 898.6938,
+      "count": 2000,
+      "success": true
+    },
+    {
+      "round": 1,
+      "volume": 2000,
+      "events": 2010,
+      "sample": 3,
+      "operation": "getAuditLog",
+      "durationMs": 234.8978,
+      "success": false,
+      "error": "Transaction ran out of gas"
+    },
+    {
+      "round": 1,
+      "volume": 2000,
+      "events": 2010,
+      "sample": 3,
+      "operation": "getCreditEvents",
+      "durationMs": 54.9837,
+      "count": 5,
+      "success": true
+    },
+    {
+      "round": 2,
+      "volume": 10,
+      "events": 20,
+      "sample": 1,
+      "operation": "getLogs",
+      "durationMs": 2.5986,
+      "count": 20,
+      "success": true
+    },
+    {
+      "round": 2,
+      "volume": 10,
+      "events": 20,
+      "sample": 1,
+      "operation": "replay",
+      "durationMs": 7.6955,
+      "count": 10,
+      "success": true
+    },
+    {
+      "round": 2,
+      "volume": 10,
+      "events": 20,
+      "sample": 1,
+      "operation": "getAuditLog",
+      "durationMs": 7.4703,
+      "count": 20,
+      "success": true
+    },
+    {
+      "round": 2,
+      "volume": 10,
+      "events": 20,
+      "sample": 1,
+      "operation": "getCreditEvents",
+      "durationMs": 2.8787,
+      "count": 5,
+      "success": true
+    },
+    {
+      "round": 2,
+      "volume": 10,
+      "events": 20,
+      "sample": 2,
+      "operation": "getLogs",
+      "durationMs": 2.7458,
+      "count": 20,
+      "success": true
+    },
+    {
+      "round": 2,
+      "volume": 10,
+      "events": 20,
+      "sample": 2,
+      "operation": "replay",
+      "durationMs": 8.5641,
+      "count": 10,
+      "success": true
+    },
+    {
+      "round": 2,
+      "volume": 10,
+      "events": 20,
+      "sample": 2,
+      "operation": "getAuditLog",
+      "durationMs": 7.132,
+      "count": 20,
+      "success": true
+    },
+    {
+      "round": 2,
+      "volume": 10,
+      "events": 20,
+      "sample": 2,
+      "operation": "getCreditEvents",
+      "durationMs": 3.2179,
+      "count": 5,
+      "success": true
+    },
+    {
+      "round": 2,
+      "volume": 10,
+      "events": 20,
+      "sample": 3,
+      "operation": "getLogs",
+      "durationMs": 2.5555,
+      "count": 20,
+      "success": true
+    },
+    {
+      "round": 2,
+      "volume": 10,
+      "events": 20,
+      "sample": 3,
+      "operation": "replay",
+      "durationMs": 8.4781,
+      "count": 10,
+      "success": true
+    },
+    {
+      "round": 2,
+      "volume": 10,
+      "events": 20,
+      "sample": 3,
+      "operation": "getAuditLog",
+      "durationMs": 7.6551,
+      "count": 20,
+      "success": true
+    },
+    {
+      "round": 2,
+      "volume": 10,
+      "events": 20,
+      "sample": 3,
+      "operation": "getCreditEvents",
+      "durationMs": 3.2876,
+      "count": 5,
+      "success": true
+    },
+    {
+      "round": 2,
+      "volume": 100,
+      "events": 110,
+      "sample": 1,
+      "operation": "getLogs",
+      "durationMs": 11.1927,
+      "count": 110,
+      "success": true
+    },
+    {
+      "round": 2,
+      "volume": 100,
+      "events": 110,
+      "sample": 1,
+      "operation": "replay",
+      "durationMs": 47.6816,
+      "count": 100,
+      "success": true
+    },
+    {
+      "round": 2,
+      "volume": 100,
+      "events": 110,
+      "sample": 1,
+      "operation": "getAuditLog",
+      "durationMs": 39.3403,
+      "count": 110,
+      "success": true
+    },
+    {
+      "round": 2,
+      "volume": 100,
+      "events": 110,
+      "sample": 1,
+      "operation": "getCreditEvents",
+      "durationMs": 12.9015,
+      "count": 5,
+      "success": true
+    },
+    {
+      "round": 2,
+      "volume": 100,
+      "events": 110,
+      "sample": 2,
+      "operation": "getLogs",
+      "durationMs": 11.4143,
+      "count": 110,
+      "success": true
+    },
+    {
+      "round": 2,
+      "volume": 100,
+      "events": 110,
+      "sample": 2,
+      "operation": "replay",
+      "durationMs": 51.9248,
+      "count": 100,
+      "success": true
+    },
+    {
+      "round": 2,
+      "volume": 100,
+      "events": 110,
+      "sample": 2,
+      "operation": "getAuditLog",
+      "durationMs": 51.2255,
+      "count": 110,
+      "success": true
+    },
+    {
+      "round": 2,
+      "volume": 100,
+      "events": 110,
+      "sample": 2,
+      "operation": "getCreditEvents",
+      "durationMs": 8.0551,
+      "count": 5,
+      "success": true
+    },
+    {
+      "round": 2,
+      "volume": 100,
+      "events": 110,
+      "sample": 3,
+      "operation": "getLogs",
+      "durationMs": 12.4526,
+      "count": 110,
+      "success": true
+    },
+    {
+      "round": 2,
+      "volume": 100,
+      "events": 110,
+      "sample": 3,
+      "operation": "replay",
+      "durationMs": 42.2253,
+      "count": 100,
+      "success": true
+    },
+    {
+      "round": 2,
+      "volume": 100,
+      "events": 110,
+      "sample": 3,
+      "operation": "getAuditLog",
+      "durationMs": 40.0966,
+      "count": 110,
+      "success": true
+    },
+    {
+      "round": 2,
+      "volume": 100,
+      "events": 110,
+      "sample": 3,
+      "operation": "getCreditEvents",
+      "durationMs": 6.4247,
+      "count": 5,
+      "success": true
+    },
+    {
+      "round": 2,
+      "volume": 500,
+      "events": 510,
+      "sample": 1,
+      "operation": "getLogs",
+      "durationMs": 51.8046,
+      "count": 510,
+      "success": true
+    },
+    {
+      "round": 2,
+      "volume": 500,
+      "events": 510,
+      "sample": 1,
+      "operation": "replay",
+      "durationMs": 235.854,
+      "count": 500,
+      "success": true
+    },
+    {
+      "round": 2,
+      "volume": 500,
+      "events": 510,
+      "sample": 1,
+      "operation": "getAuditLog",
+      "durationMs": 535.3438,
+      "count": 510,
+      "success": true
+    },
+    {
+      "round": 2,
+      "volume": 500,
+      "events": 510,
+      "sample": 1,
+      "operation": "getCreditEvents",
+      "durationMs": 19.9226,
+      "count": 5,
+      "success": true
+    },
+    {
+      "round": 2,
+      "volume": 500,
+      "events": 510,
+      "sample": 2,
+      "operation": "getLogs",
+      "durationMs": 56.3663,
+      "count": 510,
+      "success": true
+    },
+    {
+      "round": 2,
+      "volume": 500,
+      "events": 510,
+      "sample": 2,
+      "operation": "replay",
+      "durationMs": 229.5577,
+      "count": 500,
+      "success": true
+    },
+    {
+      "round": 2,
+      "volume": 500,
+      "events": 510,
+      "sample": 2,
+      "operation": "getAuditLog",
+      "durationMs": 455.7072,
+      "count": 510,
+      "success": true
+    },
+    {
+      "round": 2,
+      "volume": 500,
+      "events": 510,
+      "sample": 2,
+      "operation": "getCreditEvents",
+      "durationMs": 21.6015,
+      "count": 5,
+      "success": true
+    },
+    {
+      "round": 2,
+      "volume": 500,
+      "events": 510,
+      "sample": 3,
+      "operation": "getLogs",
+      "durationMs": 48.9769,
+      "count": 510,
+      "success": true
+    },
+    {
+      "round": 2,
+      "volume": 500,
+      "events": 510,
+      "sample": 3,
+      "operation": "replay",
+      "durationMs": 226.46,
+      "count": 500,
+      "success": true
+    },
+    {
+      "round": 2,
+      "volume": 500,
+      "events": 510,
+      "sample": 3,
+      "operation": "getAuditLog",
+      "durationMs": 415.9871,
+      "count": 510,
+      "success": true
+    },
+    {
+      "round": 2,
+      "volume": 500,
+      "events": 510,
+      "sample": 3,
+      "operation": "getCreditEvents",
+      "durationMs": 22.4811,
+      "count": 5,
+      "success": true
+    },
+    {
+      "round": 2,
+      "volume": 1000,
+      "events": 1010,
+      "sample": 1,
+      "operation": "getLogs",
+      "durationMs": 94.5048,
+      "count": 1010,
+      "success": true
+    },
+    {
+      "round": 2,
+      "volume": 1000,
+      "events": 1010,
+      "sample": 1,
+      "operation": "replay",
+      "durationMs": 438.7169,
+      "count": 1000,
+      "success": true
+    },
+    {
+      "round": 2,
+      "volume": 1000,
+      "events": 1010,
+      "sample": 1,
+      "operation": "getAuditLog",
+      "durationMs": 1309.6366,
+      "count": 1010,
+      "success": true
+    },
+    {
+      "round": 2,
+      "volume": 1000,
+      "events": 1010,
+      "sample": 1,
+      "operation": "getCreditEvents",
+      "durationMs": 40.5315,
+      "count": 5,
+      "success": true
+    },
+    {
+      "round": 2,
+      "volume": 1000,
+      "events": 1010,
+      "sample": 2,
+      "operation": "getLogs",
+      "durationMs": 94.2663,
+      "count": 1010,
+      "success": true
+    },
+    {
+      "round": 2,
+      "volume": 1000,
+      "events": 1010,
+      "sample": 2,
+      "operation": "replay",
+      "durationMs": 436.277,
+      "count": 1000,
+      "success": true
+    },
+    {
+      "round": 2,
+      "volume": 1000,
+      "events": 1010,
+      "sample": 2,
+      "operation": "getAuditLog",
+      "durationMs": 1303.3933,
+      "count": 1010,
+      "success": true
+    },
+    {
+      "round": 2,
+      "volume": 1000,
+      "events": 1010,
+      "sample": 2,
+      "operation": "getCreditEvents",
+      "durationMs": 42.2425,
+      "count": 5,
+      "success": true
+    },
+    {
+      "round": 2,
+      "volume": 1000,
+      "events": 1010,
+      "sample": 3,
+      "operation": "getLogs",
+      "durationMs": 103.1324,
+      "count": 1010,
+      "success": true
+    },
+    {
+      "round": 2,
+      "volume": 1000,
+      "events": 1010,
+      "sample": 3,
+      "operation": "replay",
+      "durationMs": 475.4397,
+      "count": 1000,
+      "success": true
+    },
+    {
+      "round": 2,
+      "volume": 1000,
+      "events": 1010,
+      "sample": 3,
+      "operation": "getAuditLog",
+      "durationMs": 1272.895,
+      "count": 1010,
+      "success": true
+    },
+    {
+      "round": 2,
+      "volume": 1000,
+      "events": 1010,
+      "sample": 3,
+      "operation": "getCreditEvents",
+      "durationMs": 34.2536,
+      "count": 5,
+      "success": true
+    },
+    {
+      "round": 2,
+      "volume": 2000,
+      "events": 2010,
+      "sample": 1,
+      "operation": "getLogs",
+      "durationMs": 200.7507,
+      "count": 2010,
+      "success": true
+    },
+    {
+      "round": 2,
+      "volume": 2000,
+      "events": 2010,
+      "sample": 1,
+      "operation": "replay",
+      "durationMs": 983.9752,
+      "count": 2000,
+      "success": true
+    },
+    {
+      "round": 2,
+      "volume": 2000,
+      "events": 2010,
+      "sample": 1,
+      "operation": "getAuditLog",
+      "durationMs": 465.0504,
+      "success": false,
+      "error": "Transaction ran out of gas"
+    },
+    {
+      "round": 2,
+      "volume": 2000,
+      "events": 2010,
+      "sample": 1,
+      "operation": "getCreditEvents",
+      "durationMs": 84.8414,
+      "count": 5,
+      "success": true
+    },
+    {
+      "round": 2,
+      "volume": 2000,
+      "events": 2010,
+      "sample": 2,
+      "operation": "getLogs",
+      "durationMs": 365.8506,
+      "count": 2010,
+      "success": true
+    },
+    {
+      "round": 2,
+      "volume": 2000,
+      "events": 2010,
+      "sample": 2,
+      "operation": "replay",
+      "durationMs": 2385.4022,
+      "count": 2000,
+      "success": true
+    },
+    {
+      "round": 2,
+      "volume": 2000,
+      "events": 2010,
+      "sample": 2,
+      "operation": "getAuditLog",
+      "durationMs": 447.8909,
+      "success": false,
+      "error": "Transaction ran out of gas"
+    },
+    {
+      "round": 2,
+      "volume": 2000,
+      "events": 2010,
+      "sample": 2,
+      "operation": "getCreditEvents",
+      "durationMs": 74.6695,
+      "count": 5,
+      "success": true
+    },
+    {
+      "round": 2,
+      "volume": 2000,
+      "events": 2010,
+      "sample": 3,
+      "operation": "getLogs",
+      "durationMs": 246.0656,
+      "count": 2010,
+      "success": true
+    },
+    {
+      "round": 2,
+      "volume": 2000,
+      "events": 2010,
+      "sample": 3,
+      "operation": "replay",
+      "durationMs": 1142.1639,
+      "count": 2000,
+      "success": true
+    },
+    {
+      "round": 2,
+      "volume": 2000,
+      "events": 2010,
+      "sample": 3,
+      "operation": "getAuditLog",
+      "durationMs": 278.9545,
+      "success": false,
+      "error": "Transaction ran out of gas"
+    },
+    {
+      "round": 2,
+      "volume": 2000,
+      "events": 2010,
+      "sample": 3,
+      "operation": "getCreditEvents",
+      "durationMs": 71.8658,
+      "count": 5,
+      "success": true
+    },
+    {
+      "round": 3,
+      "volume": 10,
+      "events": 20,
+      "sample": 1,
+      "operation": "getLogs",
+      "durationMs": 8.0761,
+      "count": 20,
+      "success": true
+    },
+    {
+      "round": 3,
+      "volume": 10,
+      "events": 20,
+      "sample": 1,
+      "operation": "replay",
+      "durationMs": 21.4157,
+      "count": 10,
+      "success": true
+    },
+    {
+      "round": 3,
+      "volume": 10,
+      "events": 20,
+      "sample": 1,
+      "operation": "getAuditLog",
+      "durationMs": 12.866,
+      "count": 20,
+      "success": true
+    },
+    {
+      "round": 3,
+      "volume": 10,
+      "events": 20,
+      "sample": 1,
+      "operation": "getCreditEvents",
+      "durationMs": 2.8642,
+      "count": 5,
+      "success": true
+    },
+    {
+      "round": 3,
+      "volume": 10,
+      "events": 20,
+      "sample": 2,
+      "operation": "getLogs",
+      "durationMs": 3.6301,
+      "count": 20,
+      "success": true
+    },
+    {
+      "round": 3,
+      "volume": 10,
+      "events": 20,
+      "sample": 2,
+      "operation": "replay",
+      "durationMs": 21.1875,
+      "count": 10,
+      "success": true
+    },
+    {
+      "round": 3,
+      "volume": 10,
+      "events": 20,
+      "sample": 2,
+      "operation": "getAuditLog",
+      "durationMs": 18.6872,
+      "count": 20,
+      "success": true
+    },
+    {
+      "round": 3,
+      "volume": 10,
+      "events": 20,
+      "sample": 2,
+      "operation": "getCreditEvents",
+      "durationMs": 8.2492,
+      "count": 5,
+      "success": true
+    },
+    {
+      "round": 3,
+      "volume": 10,
+      "events": 20,
+      "sample": 3,
+      "operation": "getLogs",
+      "durationMs": 3.0228,
+      "count": 20,
+      "success": true
+    },
+    {
+      "round": 3,
+      "volume": 10,
+      "events": 20,
+      "sample": 3,
+      "operation": "replay",
+      "durationMs": 18.0707,
+      "count": 10,
+      "success": true
+    },
+    {
+      "round": 3,
+      "volume": 10,
+      "events": 20,
+      "sample": 3,
+      "operation": "getAuditLog",
+      "durationMs": 10.0207,
+      "count": 20,
+      "success": true
+    },
+    {
+      "round": 3,
+      "volume": 10,
+      "events": 20,
+      "sample": 3,
+      "operation": "getCreditEvents",
+      "durationMs": 7.4606,
+      "count": 5,
+      "success": true
+    },
+    {
+      "round": 3,
+      "volume": 100,
+      "events": 110,
+      "sample": 1,
+      "operation": "getLogs",
+      "durationMs": 11.0623,
+      "count": 110,
+      "success": true
+    },
+    {
+      "round": 3,
+      "volume": 100,
+      "events": 110,
+      "sample": 1,
+      "operation": "replay",
+      "durationMs": 84.3455,
+      "count": 100,
+      "success": true
+    },
+    {
+      "round": 3,
+      "volume": 100,
+      "events": 110,
+      "sample": 1,
+      "operation": "getAuditLog",
+      "durationMs": 76.2312,
+      "count": 110,
+      "success": true
+    },
+    {
+      "round": 3,
+      "volume": 100,
+      "events": 110,
+      "sample": 1,
+      "operation": "getCreditEvents",
+      "durationMs": 12.0766,
+      "count": 5,
+      "success": true
+    },
+    {
+      "round": 3,
+      "volume": 100,
+      "events": 110,
+      "sample": 2,
+      "operation": "getLogs",
+      "durationMs": 10.9876,
+      "count": 110,
+      "success": true
+    },
+    {
+      "round": 3,
+      "volume": 100,
+      "events": 110,
+      "sample": 2,
+      "operation": "replay",
+      "durationMs": 55.8517,
+      "count": 100,
+      "success": true
+    },
+    {
+      "round": 3,
+      "volume": 100,
+      "events": 110,
+      "sample": 2,
+      "operation": "getAuditLog",
+      "durationMs": 57.4958,
+      "count": 110,
+      "success": true
+    },
+    {
+      "round": 3,
+      "volume": 100,
+      "events": 110,
+      "sample": 2,
+      "operation": "getCreditEvents",
+      "durationMs": 7.8415,
+      "count": 5,
+      "success": true
+    },
+    {
+      "round": 3,
+      "volume": 100,
+      "events": 110,
+      "sample": 3,
+      "operation": "getLogs",
+      "durationMs": 12.1769,
+      "count": 110,
+      "success": true
+    },
+    {
+      "round": 3,
+      "volume": 100,
+      "events": 110,
+      "sample": 3,
+      "operation": "replay",
+      "durationMs": 54.997,
+      "count": 100,
+      "success": true
+    },
+    {
+      "round": 3,
+      "volume": 100,
+      "events": 110,
+      "sample": 3,
+      "operation": "getAuditLog",
+      "durationMs": 67.45,
+      "count": 110,
+      "success": true
+    },
+    {
+      "round": 3,
+      "volume": 100,
+      "events": 110,
+      "sample": 3,
+      "operation": "getCreditEvents",
+      "durationMs": 6.4972,
+      "count": 5,
+      "success": true
+    },
+    {
+      "round": 3,
+      "volume": 500,
+      "events": 510,
+      "sample": 1,
+      "operation": "getLogs",
+      "durationMs": 51.9714,
+      "count": 510,
+      "success": true
+    },
+    {
+      "round": 3,
+      "volume": 500,
+      "events": 510,
+      "sample": 1,
+      "operation": "replay",
+      "durationMs": 271.5441,
+      "count": 500,
+      "success": true
+    },
+    {
+      "round": 3,
+      "volume": 500,
+      "events": 510,
+      "sample": 1,
+      "operation": "getAuditLog",
+      "durationMs": 466.398,
+      "count": 510,
+      "success": true
+    },
+    {
+      "round": 3,
+      "volume": 500,
+      "events": 510,
+      "sample": 1,
+      "operation": "getCreditEvents",
+      "durationMs": 21.0408,
+      "count": 5,
+      "success": true
+    },
+    {
+      "round": 3,
+      "volume": 500,
+      "events": 510,
+      "sample": 2,
+      "operation": "getLogs",
+      "durationMs": 48.8563,
+      "count": 510,
+      "success": true
+    },
+    {
+      "round": 3,
+      "volume": 500,
+      "events": 510,
+      "sample": 2,
+      "operation": "replay",
+      "durationMs": 296.2983,
+      "count": 500,
+      "success": true
+    },
+    {
+      "round": 3,
+      "volume": 500,
+      "events": 510,
+      "sample": 2,
+      "operation": "getAuditLog",
+      "durationMs": 445.9691,
+      "count": 510,
+      "success": true
+    },
+    {
+      "round": 3,
+      "volume": 500,
+      "events": 510,
+      "sample": 2,
+      "operation": "getCreditEvents",
+      "durationMs": 18.7606,
+      "count": 5,
+      "success": true
+    },
+    {
+      "round": 3,
+      "volume": 500,
+      "events": 510,
+      "sample": 3,
+      "operation": "getLogs",
+      "durationMs": 46.6714,
+      "count": 510,
+      "success": true
+    },
+    {
+      "round": 3,
+      "volume": 500,
+      "events": 510,
+      "sample": 3,
+      "operation": "replay",
+      "durationMs": 253.7795,
+      "count": 500,
+      "success": true
+    },
+    {
+      "round": 3,
+      "volume": 500,
+      "events": 510,
+      "sample": 3,
+      "operation": "getAuditLog",
+      "durationMs": 528.2886,
+      "count": 510,
+      "success": true
+    },
+    {
+      "round": 3,
+      "volume": 500,
+      "events": 510,
+      "sample": 3,
+      "operation": "getCreditEvents",
+      "durationMs": 22.0609,
+      "count": 5,
+      "success": true
+    },
+    {
+      "round": 3,
+      "volume": 1000,
+      "events": 1010,
+      "sample": 1,
+      "operation": "getLogs",
+      "durationMs": 124.1172,
+      "count": 1010,
+      "success": true
+    },
+    {
+      "round": 3,
+      "volume": 1000,
+      "events": 1010,
+      "sample": 1,
+      "operation": "replay",
+      "durationMs": 480.0141,
+      "count": 1000,
+      "success": true
+    },
+    {
+      "round": 3,
+      "volume": 1000,
+      "events": 1010,
+      "sample": 1,
+      "operation": "getAuditLog",
+      "durationMs": 1461.4618,
+      "count": 1010,
+      "success": true
+    },
+    {
+      "round": 3,
+      "volume": 1000,
+      "events": 1010,
+      "sample": 1,
+      "operation": "getCreditEvents",
+      "durationMs": 30.7361,
+      "count": 5,
+      "success": true
+    },
+    {
+      "round": 3,
+      "volume": 1000,
+      "events": 1010,
+      "sample": 2,
+      "operation": "getLogs",
+      "durationMs": 92.1684,
+      "count": 1010,
+      "success": true
+    },
+    {
+      "round": 3,
+      "volume": 1000,
+      "events": 1010,
+      "sample": 2,
+      "operation": "replay",
+      "durationMs": 443.3991,
+      "count": 1000,
+      "success": true
+    },
+    {
+      "round": 3,
+      "volume": 1000,
+      "events": 1010,
+      "sample": 2,
+      "operation": "getAuditLog",
+      "durationMs": 1244.0733,
+      "count": 1010,
+      "success": true
+    },
+    {
+      "round": 3,
+      "volume": 1000,
+      "events": 1010,
+      "sample": 2,
+      "operation": "getCreditEvents",
+      "durationMs": 33.7101,
+      "count": 5,
+      "success": true
+    },
+    {
+      "round": 3,
+      "volume": 1000,
+      "events": 1010,
+      "sample": 3,
+      "operation": "getLogs",
+      "durationMs": 91.1547,
+      "count": 1010,
+      "success": true
+    },
+    {
+      "round": 3,
+      "volume": 1000,
+      "events": 1010,
+      "sample": 3,
+      "operation": "replay",
+      "durationMs": 450.827,
+      "count": 1000,
+      "success": true
+    },
+    {
+      "round": 3,
+      "volume": 1000,
+      "events": 1010,
+      "sample": 3,
+      "operation": "getAuditLog",
+      "durationMs": 1197.174,
+      "count": 1010,
+      "success": true
+    },
+    {
+      "round": 3,
+      "volume": 1000,
+      "events": 1010,
+      "sample": 3,
+      "operation": "getCreditEvents",
+      "durationMs": 31.2861,
+      "count": 5,
+      "success": true
+    },
+    {
+      "round": 3,
+      "volume": 2000,
+      "events": 2010,
+      "sample": 1,
+      "operation": "getLogs",
+      "durationMs": 187.6632,
+      "count": 2010,
+      "success": true
+    },
+    {
+      "round": 3,
+      "volume": 2000,
+      "events": 2010,
+      "sample": 1,
+      "operation": "replay",
+      "durationMs": 908.11,
+      "count": 2000,
+      "success": true
+    },
+    {
+      "round": 3,
+      "volume": 2000,
+      "events": 2010,
+      "sample": 1,
+      "operation": "getAuditLog",
+      "durationMs": 259.2944,
+      "success": false,
+      "error": "Transaction ran out of gas"
+    },
+    {
+      "round": 3,
+      "volume": 2000,
+      "events": 2010,
+      "sample": 1,
+      "operation": "getCreditEvents",
+      "durationMs": 67.174,
+      "count": 5,
+      "success": true
+    },
+    {
+      "round": 3,
+      "volume": 2000,
+      "events": 2010,
+      "sample": 2,
+      "operation": "getLogs",
+      "durationMs": 188.2584,
+      "count": 2010,
+      "success": true
+    },
+    {
+      "round": 3,
+      "volume": 2000,
+      "events": 2010,
+      "sample": 2,
+      "operation": "replay",
+      "durationMs": 939.2576,
+      "count": 2000,
+      "success": true
+    },
+    {
+      "round": 3,
+      "volume": 2000,
+      "events": 2010,
+      "sample": 2,
+      "operation": "getAuditLog",
+      "durationMs": 240.6686,
+      "success": false,
+      "error": "Transaction ran out of gas"
+    },
+    {
+      "round": 3,
+      "volume": 2000,
+      "events": 2010,
+      "sample": 2,
+      "operation": "getCreditEvents",
+      "durationMs": 71.9307,
+      "count": 5,
+      "success": true
+    },
+    {
+      "round": 3,
+      "volume": 2000,
+      "events": 2010,
+      "sample": 3,
+      "operation": "getLogs",
+      "durationMs": 187.606,
+      "count": 2010,
+      "success": true
+    },
+    {
+      "round": 3,
+      "volume": 2000,
+      "events": 2010,
+      "sample": 3,
+      "operation": "replay",
+      "durationMs": 954.8789,
+      "count": 2000,
+      "success": true
+    },
+    {
+      "round": 3,
+      "volume": 2000,
+      "events": 2010,
+      "sample": 3,
+      "operation": "getAuditLog",
+      "durationMs": 243.8871,
+      "success": false,
+      "error": "Transaction ran out of gas"
+    },
+    {
+      "round": 3,
+      "volume": 2000,
+      "events": 2010,
+      "sample": 3,
+      "operation": "getCreditEvents",
+      "durationMs": 67.8568,
+      "count": 5,
+      "success": true
+    }
+  ],
+  "checks": [
+    {
+      "round": 1,
+      "volume": 10,
+      "events": 20,
+      "creditsCompared": 10,
+      "fieldsPerCredit": 8,
+      "passed": true
+    },
+    {
+      "round": 1,
+      "negativeControls": [
+        "duplicate-log",
+        "missing-issuance",
+        "altered-owner"
+      ],
+      "passed": true
+    },
+    {
+      "round": 1,
+      "volume": 100,
+      "events": 110,
+      "creditsCompared": 100,
+      "fieldsPerCredit": 8,
+      "passed": true
+    },
+    {
+      "round": 1,
+      "volume": 500,
+      "events": 510,
+      "creditsCompared": 500,
+      "fieldsPerCredit": 8,
+      "passed": true
+    },
+    {
+      "round": 1,
+      "volume": 1000,
+      "events": 1010,
+      "creditsCompared": 1000,
+      "fieldsPerCredit": 8,
+      "passed": true
+    },
+    {
+      "round": 1,
+      "volume": 2000,
+      "events": 2010,
+      "creditsCompared": 2000,
+      "fieldsPerCredit": 8,
+      "passed": true
+    },
+    {
+      "round": 2,
+      "volume": 10,
+      "events": 20,
+      "creditsCompared": 10,
+      "fieldsPerCredit": 8,
+      "passed": true
+    },
+    {
+      "round": 2,
+      "negativeControls": [
+        "duplicate-log",
+        "missing-issuance",
+        "altered-owner"
+      ],
+      "passed": true
+    },
+    {
+      "round": 2,
+      "volume": 100,
+      "events": 110,
+      "creditsCompared": 100,
+      "fieldsPerCredit": 8,
+      "passed": true
+    },
+    {
+      "round": 2,
+      "volume": 500,
+      "events": 510,
+      "creditsCompared": 500,
+      "fieldsPerCredit": 8,
+      "passed": true
+    },
+    {
+      "round": 2,
+      "volume": 1000,
+      "events": 1010,
+      "creditsCompared": 1000,
+      "fieldsPerCredit": 8,
+      "passed": true
+    },
+    {
+      "round": 2,
+      "volume": 2000,
+      "events": 2010,
+      "creditsCompared": 2000,
+      "fieldsPerCredit": 8,
+      "passed": true
+    },
+    {
+      "round": 3,
+      "volume": 10,
+      "events": 20,
+      "creditsCompared": 10,
+      "fieldsPerCredit": 8,
+      "passed": true
+    },
+    {
+      "round": 3,
+      "negativeControls": [
+        "duplicate-log",
+        "missing-issuance",
+        "altered-owner"
+      ],
+      "passed": true
+    },
+    {
+      "round": 3,
+      "volume": 100,
+      "events": 110,
+      "creditsCompared": 100,
+      "fieldsPerCredit": 8,
+      "passed": true
+    },
+    {
+      "round": 3,
+      "volume": 500,
+      "events": 510,
+      "creditsCompared": 500,
+      "fieldsPerCredit": 8,
+      "passed": true
+    },
+    {
+      "round": 3,
+      "volume": 1000,
+      "events": 1010,
+      "creditsCompared": 1000,
+      "fieldsPerCredit": 8,
+      "passed": true
+    },
+    {
+      "round": 3,
+      "volume": 2000,
+      "events": 2010,
+      "creditsCompared": 2000,
+      "fieldsPerCredit": 8,
+      "passed": true
+    }
+  ],
+  "node": "v22.17.0",
+  "hardhat": "2.28.6",
+  "solidity": {
+    "compilers": [
+      {
+        "version": "0.8.20",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      }
+    ],
+    "overrides": {}
+  },
+  "contractSha256": "69a9b4b00e2c97022e81cb926d2c5403ccc2c1da6fe354ce58d4edc94929b269",
+  "scriptSha256": "91630dc137dc883a848b66e4bd98bf7b8dcf6188cd85ce4ca2d310ec25f32e62",
+  "excludedFields": [
+    "location",
+    "geoCoordinates"
+  ],
+  "scope": "Isolated in-process Hardhat, automining; timings include ethers decoding.",
+  "chainId": "31337"
+}

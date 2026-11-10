@@ -1,0 +1,91 @@
+{
+  "experiment": "E12+E13",
+  "e14": {
+    "kind": "documentary-context",
+    "measured": false
+  },
+  "network": {
+    "name": "hardhat",
+    "chainId": "31337"
+  },
+  "latency": [
+    {
+      "operation": "issueCredit",
+      "samples": [
+        4,
+        2,
+        2,
+        3,
+        1,
+        2,
+        2,
+        2,
+        3,
+        2
+      ],
+      "minMs": 1,
+      "avgMs": 2,
+      "maxMs": 4
+    },
+    {
+      "operation": "validateCredit",
+      "samples": [
+        2,
+        1,
+        2,
+        1,
+        1,
+        2,
+        1,
+        1,
+        3,
+        2
+      ],
+      "minMs": 1,
+      "avgMs": 2,
+      "maxMs": 3
+    },
+    {
+      "operation": "transferCredit",
+      "samples": [
+        4,
+        3,
+        2,
+        2,
+        3,
+        2,
+        2,
+        2,
+        2,
+        2
+      ],
+      "minMs": 2,
+      "avgMs": 2,
+      "maxMs": 4
+    },
+    {
+      "operation": "retireCredit",
+      "samples": [
+        1,
+        2,
+        2,
+        1,
+        1,
+        2,
+        1,
+        2,
+        1,
+        1
+      ],
+      "minMs": 1,
+      "avgMs": 1,
+      "maxMs": 2
+    }
+  ],
+  "throughput": {
+    "batch": 20,
+    "confirmed": 20,
+    "durationMs": 30,
+    "tps": 666.67
+  }
+}
